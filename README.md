@@ -12,11 +12,6 @@ Analysis is performed in two steps: first 3D diffusion tensor field is calculate
 ### Help: ###
 Run programs interactively (without input from configuration files) and type "help" at the prompt
 
-
-~$./streamline -h
-
-
-
 ### Input: ###
 1. Molecular parameters in amber7 format and trajectory in dcd format.
 2. User configurable parameters: tfield.conf and streamline.conf
