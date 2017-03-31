@@ -30,8 +30,8 @@ Or:
  ./run_test.sh 
  
 
-### Getting help with the configuration for "tensors" program: ###
-Run program interactively (without input from configuration files) and type "help" at the prompt.
+### Getting help with the configuration: ###
+Run "tensors" program interactively (without input from configuration files) and type "help" at the prompt.
 
 ### Output of the "tensors" program: ###
 1. 3D map of apparent diffusion coefficient:    "ADC.pdb" 
