@@ -6,7 +6,7 @@ Streamline analysis is performed in two steps. First 3D diffusion tensor field i
 
 ### Input: ###
 1. Molecular parameters in amber7 format and dcd formatted trajectory.
-2. User configurable parameters: 
+2. User configurable parameters: tfield.conf and streamline.conf
 
 ### Output of the "tensors" program: ###
 1. 3D map of apparent diffusion coefficient:    "ADC.pdb" 
@@ -19,4 +19,4 @@ Streamline analysis is performed in two steps. First 3D diffusion tensor field i
 2. Streamlines color-coded by  diffusion:  streamline_D.mol2
 3. Streamlines color-coded by  direction:  streamline_XYZ.mol2
 
-Color code is saved in charge section of mol2 files.
+Color code is saved in the charge section of mol2 files.
