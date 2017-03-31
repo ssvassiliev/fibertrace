@@ -30,4 +30,4 @@ The values are saved in the "occupancy" field of the ATOM record. In case of dif
 2. Streamlines color-coded by  diffusion:  streamline_D.mol2
 3. Streamlines color-coded by  direction:  streamline_XYZ.mol2
 
-Color code is saved in the charge section of mol2 files. To color streamlines by direction use shell script "load_streamlines_vmd.sh"
+Color code is saved in the charge section of mol2 files. To color streamlines by direction use shell script "load_streamlines_mol2.sh" (requires VMD)
