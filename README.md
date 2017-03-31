@@ -2,7 +2,7 @@
 
 ### Programs for analysis of solvent flow in molecular dynamics simulations ###
 
-Streamline analysis is performed in two steps. First 3D diffusion tensor field is calculated using the program "tensors". Next streamline analysis in spirit of MRI fiber tractography is performed using the "streamline" program. 
+Analysis is performed in two steps: first 3D diffusion tensor field is calculated using the program "tensors", next streamline analysis in spirit of MRI fiber tractography is performed using the "streamline" program. 
 
 ### Running programs: ###
 ~$./tensors < tfield.conf
