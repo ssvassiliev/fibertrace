@@ -26,7 +26,7 @@ Streamline analysis is performed in two steps. First 3D diffusion tensor field i
 3. 3D water density map:                        "Oxygen.pdb", "Hydrogen.pdb"
 4. 3D diffusion tensor field:                   "tensors.sit"
 
-Values are saved in the "occupancy" field of the ATOM record. In case of diffusion coefficient output the weighting factors (grid occupancy) are saved in the "beta" field. 
+The values are saved in the "occupancy" field of the ATOM record. In case of diffusion coefficient output the weighting factors (grid occupancy) are saved in the "beta" field. 
 
 
 ### Output of the "streamline" program: ###
