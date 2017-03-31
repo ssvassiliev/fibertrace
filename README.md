@@ -10,7 +10,7 @@ Analysis is performed in two steps: first 3D diffusion tensor field is calculate
 ~$./streamline < steamline.conf
 
 ### Help: ###
-Run programs without input from configuration files and type "help" at the prompt
+Run programs interactively (without input from configuration files) and type "help" at the prompt
 
 
 ~$./streamline -h
