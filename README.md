@@ -3,7 +3,7 @@
 ### Programs for analysis of solvent flow in molecular dynamics simulations ###
 
 ![streamlines.png](https://bitbucket.org/repo/qExpaGG/images/3181802118-streamlines.png)
-Flow of water in squalene hopene cyclase
+Flow of water in squalene hopene cyclase computed from 100 ns long molecular dynamics simulation
 
 ### Workflow: ###
 Analysis is performed in two steps: first 3D diffusion tensor field is calculated using the program "tensors", next streamline analysis in spirit of MRI fiber tractography is performed using the "streamline" program. 
