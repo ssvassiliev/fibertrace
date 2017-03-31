@@ -4,12 +4,12 @@
 
 Analysis is performed in two steps: first 3D diffusion tensor field is calculated using the program "tensors", next streamline analysis in spirit of MRI fiber tractography is performed using the "streamline" program. 
 
-### Running programs: ###
+### Running the programs: ###
 ~$./tensors < tfield.conf
 
 ~$./streamline < steamline.conf
 
-### Help: ###
+### Getting help: ###
 Run programs interactively (without input from configuration files) and type "help" at the prompt.
 
 ### Input: ###
