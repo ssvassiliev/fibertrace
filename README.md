@@ -9,6 +9,9 @@ Flow of water in squalene hopene cyclase computed from 100 ns long molecular dyn
 ### Workflow: ###
 Analysis is performed in two steps: first 3D diffusion tensor field is calculated using the program "tensors", next streamline analysis in spirit of MRI fiber tractography is performed using the "streamline" program. 
 
+### Dependencies: ###
+LAPACK, BLAS
+
 ### Input: ###
 1. Molecular parameters in amber7 format and trajectory in dcd format.
 2. User configurable parameters: "tfield.conf" and "streamline.conf".
