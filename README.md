@@ -7,7 +7,9 @@ Analysis is performed in two steps: first 3D diffusion tensor field is calculate
 ### Input: ###
 1. Molecular parameters in amber7 format and trajectory in dcd format.
 2. User configurable parameters: "tfield.conf" and "streamline.conf".
+
 ### Running the programs: ###
+Edit "tfield.conf" to define your ROI and point to MD simulation files, then run the programs: 
 ~$./tensors < tfield.conf
 
 ~$./streamline < steamline.conf
