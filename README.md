@@ -10,11 +10,17 @@ Analysis is performed in two steps: first 3D diffusion tensor field is calculate
 
 ### Running the programs: ###
 Edit "tfield.conf" to define your ROI and point to MD simulation files, then run the programs: 
-~$./tensors < tfield.conf
 
-~$./streamline < steamline.conf
+ ./tensors < tfield.conf
 
+ ./streamline < steamline.conf
 
+Or:
+ 
+ cd test
+
+ ./run_test.sh 
+ 
 
 ### Getting help with configuration: ###
 Run programs interactively (without input from configuration files) and type "help" at the prompt.
