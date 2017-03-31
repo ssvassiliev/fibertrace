@@ -4,6 +4,11 @@
 
 Streamline analysis is performed in two steps. First 3D diffusion tensor field is calculated using the program "tensors". Next streamline analysis in spirit of MRI fiber tractography is performed using the "streamline" program. 
 
+### Running programs: ###
+~$tensors < tfield.conf
+
+~$streamline < steamline.conf
+
 ### Input: ###
 1. Molecular parameters in amber7 format and trajectory in dcd format.
 2. User configurable parameters: tfield.conf and streamline.conf
