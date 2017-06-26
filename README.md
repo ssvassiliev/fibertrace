@@ -4,11 +4,9 @@
 
 ![streamlines.png](https://bitbucket.org/repo/qExpaGG/images/3181802118-streamlines.png)
 
+
 ### Reference:###
-Discovering oxygen channel topology in photosystem II using implicit ligand sampling and wavefront propagation
-Journal of Computational Science
-2014-05 | journal-article 
-DOI: 10.1016/j.jocs.2013.10.001
+Discovering oxygen channel topology in photosystem II using implicit ligand sampling and wavefront propagation, Journal of Computational Science,2014,DOI: 10.1016/j.jocs.2013.10.001
 
 Flow of water in squalene hopene cyclase computed from 100 ns long molecular dynamics simulation
 
