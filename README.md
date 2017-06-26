@@ -49,4 +49,4 @@ The values are saved in the "occupancy" field of the ATOM record. In case of dif
 The color code is saved in the charge section of mol2 files. To visualize streamlines colored by direction use shell script "load_streamlines_mol2.sh" (requires VMD).
 
 ### Reference:###
-Discovering oxygen channel topology in photosystem II using implicit ligand sampling and wavefront propagation, Journal of Computational Science, 2014, DOI: 10.1016/j.jocs.2013.10.001
+T. Zaraiskaya, S. Vassiliev, D. Bruce, Discovering oxygen channel topology in photosystem II using implicit ligand sampling and wavefront propagation. Journal of Computational Science 5 (3), 549-555, 2014, DOI: 10.1016/j.jocs.2013.10.001
