@@ -1,12 +1,7 @@
 # README #
 
 ### Programs for analysis of solvent flow in molecular dynamics simulations ###
-
 ![streamlines.png](https://bitbucket.org/repo/qExpaGG/images/3181802118-streamlines.png)
-
-
-### Reference:###
-Discovering oxygen channel topology in photosystem II using implicit ligand sampling and wavefront propagation, Journal of Computational Science,2014,DOI: 10.1016/j.jocs.2013.10.001
 
 Flow of water in squalene hopene cyclase computed from 100 ns long molecular dynamics simulation
 
@@ -52,3 +47,6 @@ The values are saved in the "occupancy" field of the ATOM record. In case of dif
 3. Streamlines color-coded by  direction:  streamline_XYZ.mol2
 
 The color code is saved in the charge section of mol2 files. To visualize streamlines colored by direction use shell script "load_streamlines_mol2.sh" (requires VMD).
+
+### Reference:###
+Discovering oxygen channel topology in photosystem II using implicit ligand sampling and wavefront propagation, Journal of Computational Science, 2014, DOI: 10.1016/j.jocs.2013.10.001
