@@ -32,6 +32,6 @@ typedef struct {
 	int b;
 } EIGEN;
 
-inline float Dab(float v1_t1, float v1_t2, float v2_t1, float v2_t2, float T);
+inline static float Dab(float, float, float, float, float);
 void WaterDensity(Setup* S);
-inline void transpose_square(double** I);
+inline static void transpose_square(double** I);

@@ -1,1 +1,1 @@
-icc tensors.c -o tfield -I ~/src -llapack -lblas -lgfortran -lquadmath -static
+gcc tensors.c -o tfield  -llapack -lblas -lgfortran -lquadmath  -lm -O3 -Wno-unused-result 

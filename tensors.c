@@ -5,14 +5,14 @@
 #include <ctype.h>
 #include <unistd.h>
 
-#include "/home/svassili/src/Lib/dcd.c"
-#include "/home/svassili/src/Lib/file_read_write.h"
-#include "/home/svassili/src/Lib/file_read_write.c"
+#include "dcd.c"
+#include "file_read_write.h"
+#include "file_read_write.c"
 #include "tensors.h"
 
 extern void dsyev_();//eigen values & orthonormal eigenvectors* fortran code
 
-inline float Dab(float v1_t1, float v1_t2, float v2_t1, float v2_t2, float T) {
+inline static float Dab(float v1_t1, float v1_t2, float v2_t1, float v2_t2, float T) {
 return (( (v1_t2-v1_t1) * (v2_t2-v2_t1) ) / (2.0f*T));}
 
 void WaterDensity(Setup* S) {
@@ -516,8 +516,8 @@ if (S->fa=='1') { fprintf(fp5,"ATOM %6li %s %s %5li    %8.3f%8.3f%8.3f%6.2f%6.2f
   if (S->adc=='1')  {fprintf(fp4,"ATOM %6li %s %s %5li    %8.3f%8.3f%8.3f%6.2f%6.2f \n",(long int)8,"DENS","WAT",(long int)1,x_index*res+x_min+res/2,y_index*res+y_min+res/2,z_index*res+z_min+res/2,0.0,0.0f);}
   if (S->fa=='1')   {fprintf(fp5,"ATOM %6li %s %s %5li    %8.3f%8.3f%8.3f%6.2f%6.2f \n",(long int)8,"DENS","WAT",(long int)1,x_index*res+x_min+res/2,y_index*res+y_min+res/2,z_index*res+z_min+res/2,0.0,0.0f);}
 
-  FILE* script;
-  script = fopen("vmd_script","wt+");
+//  FILE* script;
+//  script = fopen("vmd_script","wt+");
    float d1,d2,d3;
   for(k=0; k<nb_elementsZ; k++) {
     for(j=0; j<nb_elementsY; j++) {
@@ -535,12 +535,9 @@ if (S->fa=='1') { fprintf(fp5,"ATOM %6li %s %s %5li    %8.3f%8.3f%8.3f%6.2f%6.2f
 
 	  if (S->adc=='1') fprintf(fp4,"ATOM %6li %s %s %5li    %8.3f%8.3f%8.3f%6.2f%6.2f \n",(long int)count1+1,"DENS","WAT",(long int)1,i*res+x_min+res/2,j*res+y_min+res/2,k*res+z_min+res/2,direct[i][j][k].ADC*99.99/maxADC,tensor_count[i][j][k]*99.99/maxTCount);
 
-// mol2 ATOM: /count1
-//          if (S->adc=='1') fprintf(fp4, "%8li%5s%10.4f%10.4f%10.4f%5s%8li%5s%12f\n", (long int)count1+1, "DENS", i*res+x_min+res/2,j*res+y_min+res/2,k*res+z_min+res/2, "WAT", (long int)count1+1 ,"STR", direct[i][j][k].ADC);
-
 	  if (S->fa=='1') fprintf(fp5,"ATOM %6li %s %s %5li    %8.3f%8.3f%8.3f%6.2f%6.2f \n",(long int)count1+1,"DENS","WAT",(long int)1,i*res+x_min+res/2,j*res+y_min+res/2,k*res+z_min+res/2,direct[i][j][k].FA,0.0f);
 	  d1 = i*res+x_min+res/2; d2 = j*res+y_min+res/2; d3 = k*res+z_min+res/2;
-	  fprintf(script,"draw line {%f %f %f} {%f %f %f}\n",d1,d2,d3, d1+(direct[i][j][k].egv_x[direct[i][j][k].b]*res/2.0f),d2+(direct[i][j][k].egv_y[direct[i][j][k].b]*res/2.0f), d3+(direct[i][j][k].egv_z[direct[i][j][k].b]*res/2.0f));
+//	  fprintf(script,"draw line {%f %f %f} {%f %f %f}\n",d1,d2,d3, d1+(direct[i][j][k].egv_x[direct[i][j][k].b]*res/2.0f),d2+(direct[i][j][k].egv_y[direct[i][j][k].b]*res/2.0f), d3+(direct[i][j][k].egv_z[direct[i][j][k].b]*res/2.0f));
 	}
       }
     }
@@ -550,17 +547,17 @@ if (S->fa=='1') { fprintf(fp5,"ATOM %6li %s %s %5li    %8.3f%8.3f%8.3f%6.2f%6.2f
   if (S->hydro=='1') fclose(fp3);
   if (S->adc=='1') fclose(fp4);
   if (S->fa=='1') fclose(fp5);
-  fclose(script);
+//  fclose(script);
 }
 
-inline void welcome() {
+inline static void welcome() {
   printf(">> Water Density & Diffusion v1.1\n");
   printf(">> type 'help' to see a list of commands\n");
   printf(">> type 'print' to see the current values\n");
   printf(">> \n");
 }
 
-inline void print_help() {
+inline static void print_help() {
   printf(">> Commands:\n");
   printf(">> BOXX, BOXY, BOXZ [float], maximum allowed water displacements (Angstrom)\n");
   printf(">> XMIN, XMAX, YMIN, YMAX, ZMIN, ZMAX [float], region of interest (Angstrom)\n");
@@ -576,7 +573,7 @@ inline void print_help() {
   printf("\n   DIFF, diffusion coefficient D=<ds*ds>/6\n   ADC, apparent diffusion coefficient\n   FA, fractional anisotropy\n   HYDRO, water hydrogen density\n   OXY, water oxygen density\n");
 }
 
-inline void print_setup(Setup* S) {
+inline static void print_setup(Setup* S) {
   int i;
   printf(">> \n");
   printf(">> SETUP PARAMETERS:\n");
@@ -599,7 +596,7 @@ inline void print_setup(Setup* S) {
   printf(">> Dcd files[%i]\n",S->files_count); for(i=0; i<S->files_count; i++) {printf(">> [%i]: %s\n",i,S->dcd_files[i]);}
 }
 
-inline void take_command(Setup* S) {
+inline static void take_command(Setup* S) {
   char buffer[512];
   char command[512];
   char str[512];
@@ -653,7 +650,7 @@ inline void take_command(Setup* S) {
   memset(buffer,0,256); memset(command,0,256); memset(str,0,256);
 }
 
-main(int argc, char** argv) {
+int main(int argc, char** argv) {
   Setup* s = malloc(sizeof(Setup));
   // Defaults
   s->bx = 20.0;
@@ -676,4 +673,5 @@ main(int argc, char** argv) {
   welcome();
   while(1) 
     take_command(s);
+  return(0);
 }
