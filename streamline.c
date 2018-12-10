@@ -3,12 +3,11 @@
 #include <stdlib.h>
 #include "streamline.h"
 #include "streamline_lib.c"
-
 // Compilation with Intel MKL: 
 // loki: icc fibertracing.c -L/opt/intel/mkl/10.0.1.014/lib/em64t -lmkl -lmkl_lapack -openmp  -o fibertrace -xT 
 // zeus: icc fibertracing.c -L/opt/intel/mkl/10.1.1.019/lib/em64t -lmkl -lmkl_lapack -openmp  -o fibertrace -xT
 // icc fibertracing.c -L/opt/intel/composer_xe_2013_sp1.2.144/mkl/lib/intel64  -Wl,--start-group -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -Wl,--end-group -openmp -lpthread -openmp  -o fibertrace -xT -static
-inline P* fibertrace(P po, int* stream_count, float dt, float min_ani_fiber, float min_fiber_length,\
+static inline P* fibertrace(P po, int* stream_count, float dt, float min_ani_fiber, float min_fiber_length,\
 		     float max_fiber_length, float maxturn, float min_lambda, int filter, int npoly, float gcutoff) {
   P pn, ps;
   P* trace, *trace_tmp;
@@ -291,7 +290,7 @@ int main(int argc, char** argv) {
   save_box(i_start, i_end, j_start, j_end, k_start, k_end);
 
   if (k_start<0 | j_start<0 | i_start<0) {printf("Invalid region of integration. Now exiting...\n"); exit(0);}
-
+ fprintf(stdout,"Finding seed points, may take a while ..\n");fflush(stdout);
   // Find seed points with high anisotropy
   for(k=k_start; k<k_start+(k_end-k_start)*seed_dens; k++) 
     for(j=j_start; j<j_start+(j_end-j_start)*seed_dens; j++) 

@@ -64,7 +64,6 @@ TENSOR interpl_tens(P);
 TENSOR mlsfilter(EIGEN, P, int, float, float, int);
 inline float mountain(EIGEN);
 inline float* direction(EIGEN); 
-inline P Euler_step(P, float*, float, int);
 inline float dot_product(float *, float *);
 inline void invert_vector(float *);
 void save_interp_grid(int);
