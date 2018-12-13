@@ -3,10 +3,10 @@
 ### Programs for analysis of solvent flow in molecular dynamics simulations ###
 ![streamlines.png](https://bitbucket.org/repo/qExpaGG/images/3181802118-streamlines.png)
 
-Flow of water in squalene hopene cyclase computed from 100 ns long molecular dynamics simulation
+The flow of water in squalene hopene cyclase computed from 100 ns long molecular dynamics simulation
 
 ### Workflow: ###
-Analysis is performed in two steps: first 3D diffusion tensor field is calculated using the program "tfield", next streamline analysis in spirit of MRI fiber tractography is performed using the "streamline" program. 
+The analysis is performed in two steps: first 3D diffusion tensor field is calculated using the program "tfield", next streamline analysis in the spirit of MRI fiber tractography is performed using the "streamline" program. 
 
 ### Dependencies: ###
 LAPACK, BLAS
@@ -20,13 +20,13 @@ Before running the programs please edit both configuration files.</br></br>
 Configuration of <b>tfield</b></br>
 Parameters which <b>MUST BE TAKEN CARE OF FOR CORRECT CALCULATIONS</b> 
 1. XMIN, XMAX, YMIN, YMAX, ZMIN, ZMAX </br>
-These keywords define ROI. ROI can be either the whole simulation box or only essential part of it. Cropping ROI can dramatically speed up calculations when simulation system is very big. Defaults: \*MIN -20.0, \*MAX +20.0 
+These keywords define ROI. ROI can be either the whole simulation box or only an essential part of it. Cropping ROI can dramatically speed up calculations when the simulation system is very big. Defaults: \*MIN -20.0, \*MAX +20.0 
 2. BOXX, BOXY, BOXZ</br>
-Maximum allowed water displacement. Some water molecules located close to the box boundary may jump from one side of the box to another between consecutive frames. These waters will have huge velocities and they will create strong artefacts seen as straight lines parallel to axes. Setting BOXX, BOXY, BOXZ somewhat smaller than box dimensions will eliminate these artefacts.  Default 20.0  
+Maximum allowed water displacement. Some water molecules located close to the box boundary may jump from one side of the box to another between consecutive frames. These waters will have huge velocities and they will create strong artifacts seen as straight lines parallel to axes. Setting BOXX, BOXY, BOXZ somewhat smaller than box dimensions will eliminate these artefacts.  Default 20.0  
 3. PRMTOP, LOADDCD </br>
 Paths to parameter and trajectory files.
 4. TCAL </br>
-Time interval between frames in the trajectory multiplied by FSTEP. Default 5.0</br>
+The time interval between frames in the trajectory multiplied by FSTEP. Default 5.0</br>
  
 Parameters which can be left at the default values.</br>
 1. DENSITY</br>
@@ -34,7 +34,7 @@ Grid density (1/Angstrom), default 1.0
 2. CUTOFF</br> 
 Only grid cells with water occupancy higher than CUTOFF will be used for calculation of tensor field. Default 0.001
 3. FSTEP</br>
-If time interval between trajectory frames is small it is possible to increase it for computation of water displacements. For example if FSTEP is 1 displacement is calculated from frames 1-0, 2-1, 3-2 ... If FSTEP is 2, it is calculated from frames 2-0, 3-1, 4-2 ... Default 1. 
+If the time interval between trajectory frames is small it is possible to increase it for computation of water displacements. For example, if FSTEP is 1 displacement is calculated from frames 1-0, 2-1, 3-2 ... If FSTEP is 2, it is calculated from frames 2-0, 3-1, 4-2 ... Default 1. 
 
     
  Run the programs:</br> 
@@ -55,7 +55,7 @@ Run "tensors" program interactively (without input from configuration files) and
 3. 3D water density map:                        "Oxygen.pdb", "Hydrogen.pdb"
 4. 3D diffusion tensor field:                   "tensors.sit"
 
-The values are saved in the "occupancy" field of the ATOM record. In case of diffusion coefficient output the weighting factors (grid occupancy) are saved in the "beta" field. 
+The values are saved in the "occupancy" field of the ATOM record. In the case of diffusion coefficient output, the weighting factors (grid occupancy) are saved in the "beta" field. 
 
 
 ### Output of the "streamline" program: ###
