@@ -20,13 +20,13 @@ Before running the programs please edit both configuration files.</br></br>
 Configuration of <b>tfield</b></br>
 Parameters which <b>MUST BE TAKEN CARE OF FOR CORRECT CALCULATIONS</b> 
 1. XMIN, XMAX, YMIN, YMAX, ZMIN, ZMAX </br>
-These keywords define ROI. ROI can be the whole simulation box or only essential part of it to speed up calculations. Default -20.0 to +20.0 
+These keywords define ROI. ROI can be either the whole simulation box or only essential part of it. Cropping ROI can dramatically speed up calculations when simulation system is very big. Defaults: \*MIN -20.0, \*MAX +20.0 
 2. BOXX, BOXY, BOXZ</br>
-Maximum allowed water displacements, Angstrom. Some water molecules located close to the box boundary can jump from one side of the box to another between consecutive frames. These waters will have huge velocities and they will create strong artefacts seen as straight lines parallel to axes. Setting BOXX, BOXY, BOXZ somewhat smaller than box dimensions will eliminate these artefacts.  Default 20.0  
+Maximum allowed water displacement. Some water molecules located close to the box boundary may jump from one side of the box to another between consecutive frames. These waters will have huge velocities and they will create strong artefacts seen as straight lines parallel to axes. Setting BOXX, BOXY, BOXZ somewhat smaller than box dimensions will eliminate these artefacts.  Default 20.0  
 3. PRMTOP, LOADDCD </br>
 Paths to parameter and trajectory files.
 4. TCAL </br>
-Time interval between frames in the trajectory times FSTEP. Default 5.0</br>
+Time interval between frames in the trajectory multiplied by FSTEP. Default 5.0</br>
  
 Parameters which can be left at the default values.</br>
 1. DENSITY</br>
