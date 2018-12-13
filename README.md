@@ -25,7 +25,7 @@ These keywords define ROI. ROI can be either the whole simulation box or only an
 Maximum allowed water displacement. Some water molecules located close to the box boundary may jump from one side of the box to another between consecutive frames. These waters will have huge velocities and they will create strong artifacts seen as straight lines parallel to axes. Setting BOXX, BOXY, BOXZ somewhat smaller than box dimensions will eliminate these artefacts.  Default 20.0  
 3. PRMTOP, LOADDCD </br>
 Paths to parameter and trajectory files.
-4. TCAL </br>
+4. TSCALE </br>
 The time interval between frames in the trajectory multiplied by FSTEP. Default 5.0</br>
  
 Parameters which can be left at the default values.</br>
