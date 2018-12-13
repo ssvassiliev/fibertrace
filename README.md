@@ -37,14 +37,12 @@ Only grid cells with water occupancy higher than CUTOFF will be used for calcula
 If time interval between trajectory frames is small it is possible to increase it for computation of water displacements. For example if FSTEP is 1 displacement is calculated from frames 1-0, 2-1, 3-2 ... If FSTEP is 2, it is calculated from frames 2-0, 3-1, 4-2 ... Default 1. 
 
     
- Edit "tfield.conf" to define your ROI and point to MD simulation files, then run the programs:</br> 
+ Run the programs:</br> 
  ./tensors < tfield.conf</br>
  ./streamline < steamline.conf</br>
 
-Or:
- 
- cd test
-
+Or:</br>
+ cd test</br>
  ./run_test.sh 
  
 
