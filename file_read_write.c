@@ -188,10 +188,10 @@ int read_parm7(char *prmtop)
 
   fp=fopen(prmtop, "rt");
   if(fp==NULL)
-    {printf("** E ** topology file not found\n");return(0);}
+    {printf("** ERROR ** topology file %s not found\n",prmtop);return(1);}
   fgets(line_buf,82,fp);
   if(strncmp(&line_buf[1],"VERSION",7))
-    {printf("** E ** topology file is not in parm7 format\n");return(0);}
+    {printf("** ERROR ** topology file is not in parm7 format\n");return(1);}
 
   /* ----------------- READ NATOMS ---------------------*/
   while(1)
@@ -344,7 +344,7 @@ int read_parm7(char *prmtop)
 	// prmtop converted from GROMACS does not have RADII section      
 	 printf("Warning: RADII not found\n");
 	 fclose(fp);
-	 return(1);
+	 return(2);
       }
       if(!strncmp(&line_buf[1],"FLAG RADII",10))
 	break;

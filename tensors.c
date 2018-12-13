@@ -32,7 +32,8 @@ void WaterDensity(Setup* S) {
   float timescale = S->timescale;
   float cut_off = S->cutoff;
 
-  read_parm7(S->prmtop);
+  if(read_parm7(S->prmtop)==1) 
+    exit(1);
   if(!initialize_read_xyz(S->dcd_files[0])) return; // dcd_file
   FILE* fp1;
   FILE* fp2;
