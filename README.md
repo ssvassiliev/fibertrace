@@ -18,7 +18,7 @@ LAPACK, BLAS
 ### Running the programs: ###
 Before running the programs please edit both configuration files.
 
-Parameters which MUST BE MODIFIED in tfield.conf: 
+Parameters which <b>MUST BE TAKEN CARE OF</b> in tfield.conf: 
 1. XMIN, XMAX, YMIN, YMAX, ZMIN, ZMAX </br>
 These keywords define your ROI. It could be the whole simulation box or only essential part of the box to speed up calculations.
 2. PRMTOP, LOADDCD </br>
