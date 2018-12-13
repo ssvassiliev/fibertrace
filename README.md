@@ -16,7 +16,7 @@ LAPACK, BLAS
 2. User configurable parameters: "tfield.conf" and "streamline.conf".
 
 ### Running the programs: ###
-Before running the programs please edit both configuration files.</br>
+Before running the programs please edit both configuration files.</br></br>
 Configuration of <b>tfield</b></br>
 Parameters which <b>MUST BE TAKEN CARE OF FOR CORRECT CALCULATIONS</b> 
 1. XMIN, XMAX, YMIN, YMAX, ZMIN, ZMAX </br>
@@ -26,7 +26,8 @@ Maximum allowed water displacements, Angstrom. Some water molecules located clos
 3. PRMTOP, LOADDCD </br>
 Paths to parameter and trajectory files.
 4. TCAL </br>
-Time interval between frames in the trajectory times FSTEP. Default 5.0</br></br> 
+Time interval between frames in the trajectory times FSTEP. Default 5.0</br>
+ 
 Parameters which can be left at the default values.</br>
 1. DENSITY</br>
 Grid density (1/Angstrom), default 1.0
