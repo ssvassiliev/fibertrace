@@ -16,7 +16,18 @@ LAPACK, BLAS
 2. User configurable parameters: "tfield.conf" and "streamline.conf".
 
 ### Running the programs: ###
-Edit "tfield.conf" to define your ROI and point to MD simulation files, then run the programs: 
+Before running the programs please edit both configuration files.
+
+Parameters which MUST BE MODIFIED in tfield.conf: 
+1. XMIN, XMAX, YMIN, YMAX, ZMIN, ZMAX
+These keywords define your ROI. It could be the whole simulation box or only essential part of the box to speed up calculations.
+2. PRMTOP, LOADDCD 
+Paths to parameter and trajectory files
+3. TCAL
+Time interval between frames in the trajectory 
+
+    
+ Edit "tfield.conf" to define your ROI and point to MD simulation files, then run the programs: 
 
  ./tensors < tfield.conf
 
