@@ -339,7 +339,13 @@ int read_parm7(char *prmtop)
   /*------------------ READ RADII ---------------------------*/
   while(1)
     {
-      fgets(line_buf,82,fp);
+      if(!fgets(line_buf,82,fp))
+      {     
+	// prmtop converted from GROMACS does not have RADII section      
+	 printf("Warning: RADII not found\n");
+	 fclose(fp);
+	 return(1);
+      }
       if(!strncmp(&line_buf[1],"FLAG RADII",10))
 	break;
     }
@@ -348,7 +354,7 @@ int read_parm7(char *prmtop)
     fscanf(fp,"%f",&radius[i]);
  printf("Read radii\n");
   fclose(fp);
-  return(1);
+  return(0);
 }
 
 
