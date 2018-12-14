@@ -13,15 +13,14 @@ The analysis is performed in two steps:
 #### Dependencies ####
 LAPACK, BLAS
  
-#### Input files ####
+#### Input files
 * Molecular parameters in amber7 format.
 * Molecular dynamics trajectory in dcd format.
 * TFIELD parameters.
 * STREAMLINE parameters.
 
-#### Required TFIELD configuration parameters ####
+#### Required TFIELD configuration parameters
 The following parameters are required for every tensor field calculation:
-
 * XMIN, XMAX, YMIN, YMAX, ZMIN, ZMAX
 **Description:** These keywords define ROI. ROI can be either the whole simulation box or only an essential part of it. Cropping ROI can dramatically speed up calculations when the simulation system is very big. 
 **Default Values:** MIN = -20.0, MAX = +20.0
@@ -30,20 +29,25 @@ The following parameters are required for every tensor field calculation:
 **Description:** Maximum allowed water displacement. Some water molecules located close to the box boundary may jump from one side of the box to another between consecutive frames. These waters will have huge velocities and they will create strong artifacts seen as straight lines parallel to axes. Setting BOXX, BOXY, BOXZ somewhat smaller than box dimensions will eliminate these artifacts. 
 **Default Value:** 20.0
 
-3. PRMTOP, LOADDCD
+* PRMTOP, LOADDCD
 **Description:** Paths to parameter and trajectory files.</br>
 
-4. TSCALE 
+* TSCALE 
 **Description:** The time interval between frames in the trajectory multiplied by FSTEP. 
 **Default value:** 5.0
 
-Parameters which can be left at the default values.</br>
-1. DENSITY</br>
-Grid density (1/Angstrom), default 1.0
-2. CUTOFF</br> 
-Only grid cells with water occupancy higher than CUTOFF will be used for calculation of tensor field. Default 0.001
-3. FSTEP</br>
-If the time interval between trajectory frames is small it is possible to increase it for computation of water displacements. For example, if FSTEP is 1 displacement is calculated from frames 1-0, 2-1, 3-2 ... If FSTEP is 2, it is calculated from frames 2-0, 3-1, 4-2 ... Default 1. 
+### Optional TFIELD parameters 
+* DENSITY
+**Description:** Grid density (1/Angstrom)\
+**Default value:**  1.0
+
+* CUTOFF
+**Description:** Only grid cells with water occupancy higher than CUTOFF will be used for calculation of tensor field. 
+**Default value:** 0.001
+
+* FSTEP
+**Description:** If the time interval between trajectory frames is small it is possible to increase it for computation of water displacements. For example, if FSTEP is 1 displacement is calculated from frames 1-0, 2-1, 3-2 ... If FSTEP is 2, it is calculated from frames 2-0, 3-1, 4-2 ... 
+**Default value:**  1 
 
 Configuration file <b>streamline.conf</b></br>
 
