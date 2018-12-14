@@ -1,6 +1,7 @@
 ﻿# README
 ## Programs for analysis of solvent flow in molecular dynamics simulations
 ![streamlines.png](https://bitbucket.org/repo/qExpaGG/images/3181802118-streamlines.png)
+
 The flow of water in squalene-hopene cyclase computed from 100 ns long molecular dynamics simulation
 
 ### Workflow
