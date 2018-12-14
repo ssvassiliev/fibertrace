@@ -113,7 +113,7 @@ cd test<br>
 <li>Streamlines color-coded by  direction:  streamline_XYZ.mol2</li>
 </ol>
 <p>The color code is saved in the charge section of mol2 files. To visualize streamlines colored by direction use shell script “load_streamlines_mol2.sh” (requires VMD).</p>
-<h3 id="references">References:###</h3>
+<h3 id="references">References:</h3>
 <ol>
 <li>C. Gustafsson, S. Vassiliev, C. Kurten, P.-O. Syren, T. Brinck, MD simulations reveal complex water paths in squalene hopene cyclase - tunnel obstructing mutations alter the movements of water in the active site, ACS Omega. submitted (2017).</li>
 <li>S. Vassiliev, P. Comte, A. Mahboob, D. Bruce, Tracking the Flow of Water through Photosystem II Using Molecular Dynamics and Streamline Tracing, Biochemistry. 49 (2010) 1873–1881. doi:10.1021/bi901900s.</li>
