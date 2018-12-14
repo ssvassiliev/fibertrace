@@ -3,31 +3,40 @@
 ### Programs for analysis of solvent flow in molecular dynamics simulations ###
 ![streamlines.png](https://bitbucket.org/repo/qExpaGG/images/3181802118-streamlines.png)
 
-The flow of water in squalene hopene cyclase computed from 100 ns long molecular dynamics simulation
+The flow of water in squalene-hopene cyclase computed from 100 ns long molecular dynamics simulation
 
-### Workflow: ###
-The analysis is performed in two steps: first 3D diffusion tensor field is calculated using the program "tfield", next streamline analysis in the spirit of MRI fiber tractography is performed using the "streamline" program. 
+#### Workflow ####
+The analysis is performed in two steps: 
+1. 3D diffusion tensor field is calculated using the program **tfield** 
+2. Streamline analysis in the spirit of MRI fiber tractography is performed using the **streamline** program. 
 
-### Dependencies: ###
+#### Dependencies ####
 LAPACK, BLAS
  
-### Input: ###
-1. Molecular parameters in amber7 format and trajectory in dcd format.
-2. User configurable parameters: "tfield.conf" and "streamline.conf".
+#### Input files ####
+* Molecular parameters in amber7 format.
+* Molecular dynamics trajectory in dcd format.
+* TFIELD parameters.
+* STREAMLINE parameters.
 
-### Running the programs: ###
-Before running the programs please edit both configuration files.</br></br>
-Configuration of <b>tfield</b></br>
-Parameters which <b>MUST BE TAKEN CARE OF FOR CORRECT CALCULATIONS</b> 
-1. XMIN, XMAX, YMIN, YMAX, ZMIN, ZMAX </br>
-These keywords define ROI. ROI can be either the whole simulation box or only an essential part of it. Cropping ROI can dramatically speed up calculations when the simulation system is very big. Defaults: \*MIN -20.0, \*MAX +20.0 
-2. BOXX, BOXY, BOXZ</br>
-Maximum allowed water displacement. Some water molecules located close to the box boundary may jump from one side of the box to another between consecutive frames. These waters will have huge velocities and they will create strong artifacts seen as straight lines parallel to axes. Setting BOXX, BOXY, BOXZ somewhat smaller than box dimensions will eliminate these artefacts.  Default 20.0  
-3. PRMTOP, LOADDCD </br>
-Paths to parameter and trajectory files.
-4. TSCALE </br>
-The time interval between frames in the trajectory multiplied by FSTEP. Default 5.0</br>
- 
+#### Required TFIELD configuration parameters ####
+The following parameters are required for every tensor field calculation:
+
+* XMIN, XMAX, YMIN, YMAX, ZMIN, ZMAX
+**Description:** These keywords define ROI. ROI can be either the whole simulation box or only an essential part of it. Cropping ROI can dramatically speed up calculations when the simulation system is very big. 
+**Default Values:** MIN = -20.0, MAX = +20.0
+
+* BOXX, BOXY, BOXZ
+**Description:** Maximum allowed water displacement. Some water molecules located close to the box boundary may jump from one side of the box to another between consecutive frames. These waters will have huge velocities and they will create strong artifacts seen as straight lines parallel to axes. Setting BOXX, BOXY, BOXZ somewhat smaller than box dimensions will eliminate these artifacts. 
+**Default Value:** 20.0
+
+3. PRMTOP, LOADDCD
+**Description:** Paths to parameter and trajectory files.</br>
+
+4. TSCALE 
+**Description:** The time interval between frames in the trajectory multiplied by FSTEP. 
+**Default value:** 5.0
+
 Parameters which can be left at the default values.</br>
 1. DENSITY</br>
 Grid density (1/Angstrom), default 1.0
@@ -35,6 +44,8 @@ Grid density (1/Angstrom), default 1.0
 Only grid cells with water occupancy higher than CUTOFF will be used for calculation of tensor field. Default 0.001
 3. FSTEP</br>
 If the time interval between trajectory frames is small it is possible to increase it for computation of water displacements. For example, if FSTEP is 1 displacement is calculated from frames 1-0, 2-1, 3-2 ... If FSTEP is 2, it is calculated from frames 2-0, 3-1, 4-2 ... Default 1. 
+
+Configuration file <b>streamline.conf</b></br>
 
     
  Run the programs:</br> 
@@ -45,7 +56,6 @@ Or:</br>
  cd test</br>
  ./run_test.sh 
  
-
 ### Getting help with the configuration: ###
 Run "tensors" program interactively (without input from configuration files) and type "help" at the prompt.
 
@@ -56,7 +66,6 @@ Run "tensors" program interactively (without input from configuration files) and
 4. 3D diffusion tensor field:                   "tensors.sit"
 
 The values are saved in the "occupancy" field of the ATOM record. In the case of diffusion coefficient output, the weighting factors (grid occupancy) are saved in the "beta" field. 
-
 
 ### Output of the "streamline" program: ###
 1. Streamlines color-coded by  anisotropy: streamline_A.mol2  
