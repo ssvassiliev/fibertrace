@@ -37,7 +37,8 @@
 </li>
 <li>
 <p>PRMTOP, LOADDCD<br>
-<strong>Description:</strong> Paths to parameter and trajectory files.</p>
+<strong>Description:</strong> Paths to parameter and trajectory files.<br>
+<strong>Default value:</strong> none</p>
 </li>
 <li>
 <p>TSCALE<br>
@@ -61,6 +62,26 @@
 <p>FSTEP<br>
 <strong>Description:</strong> If the time interval between trajectory frames is small it is possible to increase it for computation of water displacements. For example, if FSTEP is 1 displacement is calculated from frames 1-0, 2-1, 3-2 … If FSTEP is 2, it is calculated from frames 2-0, 3-1, 4-2 …<br>
 <strong>Default value:</strong>  1</p>
+</li>
+<li>
+<p>ADC<br>
+<strong>Description:</strong> Save apparent diffusion coefficient map<br>
+<strong>Default value:</strong> YES</p>
+</li>
+<li>
+<p>FA<br>
+<strong>Description:</strong> Save fractional anisotrory map<br>
+<strong>Default value:</strong> YES</p>
+</li>
+<li>
+<p>DIFF<br>
+<strong>Description:</strong> Save diffusion map<br>
+<strong>Default value:</strong> YES</p>
+</li>
+<li>
+<p>TENSORS<br>
+<strong>Description:</strong> Save diffusion tensors<br>
+<strong>Default value:</strong> YES</p>
 </li>
 </ul>
 <h3 id="streamline-configuration-parameters">STREAMLINE configuration parameters</h3>
