@@ -66,24 +66,36 @@
 </ul>
 <h3 id="tfield-output-options">TFIELD output options</h3>
 <ul>
-<li>ADC<br>
+<li>
+<p>ADC<br>
 <strong>Description:</strong> Save apparent diffusion coefficient map in the occupancy field of the file ADC.pdb. The weighting factors (grid occupancy) are saved in the beta field <br>
-<strong>Default value:</strong> 1 (YES)</li>
-<li>FA<br>
+<strong>Default value:</strong> 1 (YES)</p>
+</li>
+<li>
+<p>FA<br>
 <strong>Description:</strong> Save fractional anisotrory map in the occupancy field of the file FA.pdb<br>
-<strong>Default value:</strong> 1 (YES)</li>
-<li>DIFF<br>
+<strong>Default value:</strong> 1 (YES)</p>
+</li>
+<li>
+<p>DIFF<br>
 <strong>Description:</strong> Save diffusion map in the occupancy field of the file diff.pdb<br>
-<strong>Default value:</strong> 1 (YES)</li>
-<li>HYDRO<br>
+<strong>Default value:</strong> 1 (YES)</p>
+</li>
+<li>
+<p>HYDRO<br>
 <strong>Description:</strong> Save water oxygen density map in the occupancy field of the file Hydrogen.pdb<br>
-<strong>Default value:</strong> 1 (YES)</li>
-<li>OXY<br>
+<strong>Default value:</strong> 1 (YES)</p>
+</li>
+<li>
+<p>OXY<br>
 <strong>Description:</strong> Save water hydrogen density map in the occupancy field of the file Oxygen.pdb<br>
-<strong>Default value:</strong> 1 (YES)</li>
-<li>TENSORS<br>
+<strong>Default value:</strong> 1 (YES)</p>
+</li>
+<li>
+<p>TENSORS<br>
 <strong>Description:</strong> Save diffusion tensors in the file tensors.sit<br>
-<strong>Default value:</strong> 1 (YES)</li>
+<strong>Default value:</strong> 1 (YES)</p>
+</li>
 </ul>
 <h3 id="streamline-configuration-parameters">STREAMLINE configuration parameters</h3>
 <p>Run the programs:<br>
