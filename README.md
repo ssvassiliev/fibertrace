@@ -2,7 +2,7 @@
 Table of Contents
 =================
 
-      * [Programs for analysis of solvent flow in molecular dynamics simulations](#programs-for-analysis-of-solvent-flow-in-molecular-dynamics-simulations)
+   * [Programs for analysis of solvent flow in molecular dynamics simulations](#programs-for-analysis-of-solvent-flow-in-molecular-dynamics-simulations)
          * [Workflow](#workflow)
          * [Dependencies](#dependencies)
          * [Input files](#input-files)
@@ -15,7 +15,8 @@ Table of Contents
          * [References:](#references)
 
 Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
-﻿## Programs for analysis of solvent flow in molecular dynamics simulations
+﻿
+# Programs for analysis of solvent flow in molecular dynamics simulations
 ![streamlines.png](https://bitbucket.org/repo/qExpaGG/images/3181802118-streamlines.png)
 
 The flow of water in squalene-hopene cyclase computed from 100 ns long molecular dynamics simulation
