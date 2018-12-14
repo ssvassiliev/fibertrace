@@ -1,4 +1,7 @@
-### Table of contents
+
+Table of Contents
+=================
+
       * [Programs for analysis of solvent flow in molecular dynamics simulations](#programs-for-analysis-of-solvent-flow-in-molecular-dynamics-simulations)
          * [Workflow](#workflow)
          * [Dependencies](#dependencies)
