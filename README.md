@@ -63,26 +63,27 @@
 <strong>Description:</strong> If the time interval between trajectory frames is small it is possible to increase it for computation of water displacements. For example, if FSTEP is 1 displacement is calculated from frames 1-0, 2-1, 3-2 … If FSTEP is 2, it is calculated from frames 2-0, 3-1, 4-2 …<br>
 <strong>Default value:</strong>  1</p>
 </li>
-<li>
-<p>ADC<br>
-<strong>Description:</strong> Save apparent diffusion coefficient map<br>
-<strong>Default value:</strong> YES</p>
-</li>
-<li>
-<p>FA<br>
-<strong>Description:</strong> Save fractional anisotrory map<br>
-<strong>Default value:</strong> YES</p>
-</li>
-<li>
-<p>DIFF<br>
-<strong>Description:</strong> Save diffusion map<br>
-<strong>Default value:</strong> YES</p>
-</li>
-<li>
-<p>TENSORS<br>
-<strong>Description:</strong> Save diffusion tensors<br>
-<strong>Default value:</strong> YES</p>
-</li>
+</ul>
+<h3 id="tfield-output-options">TFIELD output options</h3>
+<ul>
+<li>ADC<br>
+<strong>Description:</strong> Save apparent diffusion coefficient map in the occupancy field of the file ADC.pdb. The weighting factors (grid occupancy) are saved in the beta field <br>
+<strong>Default value:</strong> 1 (YES)</li>
+<li>FA<br>
+<strong>Description:</strong> Save fractional anisotrory map in the occupancy field of the file FA.pdb<br>
+<strong>Default value:</strong> 1 (YES)</li>
+<li>DIFF<br>
+<strong>Description:</strong> Save diffusion map in the occupancy field of the file diff.pdb<br>
+<strong>Default value:</strong> 1 (YES)</li>
+<li>HYDRO<br>
+<strong>Description:</strong> Save water oxygen density map in the occupancy field of the file Hydrogen.pdb<br>
+<strong>Default value:</strong> 1 (YES)</li>
+<li>OXY<br>
+<strong>Description:</strong> Save water hydrogen density map in the occupancy field of the file Oxygen.pdb<br>
+<strong>Default value:</strong> 1 (YES)</li>
+<li>TENSORS<br>
+<strong>Description:</strong> Save diffusion tensors in the file tensors.sit<br>
+<strong>Default value:</strong> 1 (YES)</li>
 </ul>
 <h3 id="streamline-configuration-parameters">STREAMLINE configuration parameters</h3>
 <p>Run the programs:<br>
@@ -93,14 +94,6 @@ cd test<br>
 ./run_test.sh</p>
 <h3 id="getting-help-with-the-configuration">Getting help with the configuration:</h3>
 <p>Run “tensors” program interactively (without input from configuration files) and type “help” at the prompt.</p>
-<h3 id="output-of-the-tensors-program">Output of the “tensors” program:</h3>
-<ol>
-<li>3D map of apparent diffusion coefficient:    “ADC.pdb”</li>
-<li>3D map of fractional anisotropy:             “FA.pdb”</li>
-<li>3D water density map:                        “Oxygen.pdb”, “Hydrogen.pdb”</li>
-<li>3D diffusion tensor field:                   “tensors.sit”</li>
-</ol>
-<p>The values are saved in the “occupancy” field of the ATOM record. In the case of diffusion coefficient output, the weighting factors (grid occupancy) are saved in the “beta” field.</p>
 <h3 id="output-of-the-streamline-program">Output of the “streamline” program:</h3>
 <ol>
 <li>Streamlines color-coded by  anisotropy: streamline_A.mol2</li>
