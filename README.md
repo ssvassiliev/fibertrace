@@ -3,7 +3,6 @@
 
 ---
 
-<h1 id="table-of-contents">Table of Contents</h1>
 <ul>
 <li><a href="#readme">README</a>
 <ul>
