@@ -4,24 +4,18 @@
 ---
 
 <ul>
-<li><a href="#readme">README</a>
-<ul>
-<li><a href="#programs-for-analysis-of-solvent-flow-in-molecular-dynamics-simulations">Programs for analysis of solvent flow in molecular dynamics simulations</a>
-<ul>
-<li><a href="#workflow">Workflow</a></li>
-<li><a href="#dependencies">Dependencies</a></li>
-<li><a href="#input-files">Input files</a></li>
-<li><a href="#required-tfield-configuration-parameters">Required TFIELD configuration parameters</a></li>
-<li><a href="#optional-tfield-parameters">Optional TFIELD parameters</a></li>
-<li><a href="#tfield-output-options">TFIELD output options</a></li>
-<li><a href="#streamline-configuration-parameters">STREAMLINE configuration parameters</a></li>
-<li><a href="#getting-help-with-the-configuration">Getting help with the configuration:</a></li>
-<li><a href="#output-of-the-streamline-program">Output of the “streamline” program:</a></li>
-<li><a href="#references">References:</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a href="#readme">README</a><br>
+* <a href="#programs-for-analysis-of-solvent-flow-in-molecular-dynamics-simulations">Programs for analysis of solvent flow in molecular dynamics simulations</a><br>
+* <a href="#workflow">Workflow</a><br>
+* <a href="#dependencies">Dependencies</a><br>
+* <a href="#input-files">Input files</a><br>
+* <a href="#required-tfield-configuration-parameters">Required TFIELD configuration parameters</a><br>
+* <a href="#optional-tfield-parameters">Optional TFIELD parameters</a><br>
+* <a href="#tfield-output-options">TFIELD output options</a><br>
+* <a href="#streamline-configuration-parameters">STREAMLINE configuration parameters</a><br>
+* <a href="#getting-help-with-the-configuration">Getting help with the configuration:</a><br>
+* <a href="#output-of-the-streamline-program">Output of the “streamline” program:</a><br>
+* <a href="#references">References:</a></li>
 </ul>
 <p>Created by <a href="https://github.com/ekalinin/github-markdown-toc">gh-md-toc</a></p>
 <h1 id="readme">README</h1>
