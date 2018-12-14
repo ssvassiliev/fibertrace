@@ -4,18 +4,18 @@
 ---
 
 <h1 id="readme">README</h1>
-<h3 id="programs-for-analysis-of-solvent-flow-in-molecular-dynamics-simulations">Programs for analysis of solvent flow in molecular dynamics simulations</h3>
+<h2 id="programs-for-analysis-of-solvent-flow-in-molecular-dynamics-simulations">Programs for analysis of solvent flow in molecular dynamics simulations</h2>
 <p><img src="https://bitbucket.org/repo/qExpaGG/images/3181802118-streamlines.png" alt="streamlines.png"></p>
 <p>The flow of water in squalene-hopene cyclase computed from 100 ns long molecular dynamics simulation</p>
-<h4 id="workflow">Workflow</h4>
+<h3 id="workflow">Workflow</h3>
 <p>The analysis is performed in two steps:</p>
 <ol>
 <li>3D diffusion tensor field is calculated using the program <strong>tfield</strong></li>
 <li>Streamline analysis in the spirit of MRI fiber tractography is performed using the <strong>streamline</strong> program.</li>
 </ol>
-<h4 id="dependencies">Dependencies</h4>
+<h3 id="dependencies">Dependencies</h3>
 <p>LAPACK, BLAS</p>
-<h4 id="input-files">Input files</h4>
+<h3 id="input-files">Input files</h3>
 <ul>
 <li>Molecular parameters in amber7 format.</li>
 <li>Molecular dynamics trajectory in dcd format.</li>
