@@ -1,8 +1,3 @@
----
-
-
----
-
 <h1 id="readme">README</h1>
 <h2 id="programs-for-analysis-of-solvent-flow-in-molecular-dynamics-simulations">Programs for analysis of solvent flow in molecular dynamics simulations</h2>
 <p><img src="https://bitbucket.org/repo/qExpaGG/images/3181802118-streamlines.png" alt="streamlines.png"></p>
