@@ -25,15 +25,15 @@ The following parameters are required for every tensor field calculation:
 **Description:** These keywords define ROI. ROI can be either the whole simulation box or only an essential part of it. Cropping ROI can dramatically speed up calculations when the simulation system is very big.</br> 
 **Default Values:** MIN = -20.0, MAX = +20.0
 
-* BOXX, BOXY, BOXZ
-**Description:** Maximum allowed water displacement. Some water molecules located close to the box boundary may jump from one side of the box to another between consecutive frames. These waters will have huge velocities and they will create strong artifacts seen as straight lines parallel to axes. Setting BOXX, BOXY, BOXZ somewhat smaller than box dimensions will eliminate these artifacts. 
+* BOXX, BOXY, BOXZ</br>
+**Description:** Maximum allowed water displacement. Some water molecules located close to the box boundary may jump from one side of the box to another between consecutive frames. These waters will have huge velocities and they will create strong artifacts seen as straight lines parallel to axes. Setting BOXX, BOXY, BOXZ somewhat smaller than box dimensions will eliminate these artifacts.</br> 
 **Default Value:** 20.0
 
-* PRMTOP, LOADDCD
+* PRMTOP, LOADDCD</br>
 **Description:** Paths to parameter and trajectory files.</br>
 
-* TSCALE 
-**Description:** The time interval between frames in the trajectory multiplied by FSTEP. 
+* TSCALE</br> 
+**Description:** The time interval between frames in the trajectory multiplied by FSTEP.</br> 
 **Default value:** 5.0
 
 ### Optional TFIELD parameters 
@@ -41,12 +41,12 @@ The following parameters are required for every tensor field calculation:
 **Description:** Grid density (1/Angstrom)</br>
 **Default value:**  1.0
 
-* CUTOFF
-**Description:** Only grid cells with water occupancy higher than CUTOFF will be used for calculation of tensor field. 
+* CUTOFF</br>
+**Description:** Only grid cells with water occupancy higher than CUTOFF will be used for calculation of tensor field.</br> 
 **Default value:** 0.001
 
-* FSTEP
-**Description:** If the time interval between trajectory frames is small it is possible to increase it for computation of water displacements. For example, if FSTEP is 1 displacement is calculated from frames 1-0, 2-1, 3-2 ... If FSTEP is 2, it is calculated from frames 2-0, 3-1, 4-2 ... 
+* FSTEP</br>
+**Description:** If the time interval between trajectory frames is small it is possible to increase it for computation of water displacements. For example, if FSTEP is 1 displacement is calculated from frames 1-0, 2-1, 3-2 ... If FSTEP is 2, it is calculated from frames 2-0, 3-1, 4-2 ...</br> 
 **Default value:**  1 
 
 Configuration file <b>streamline.conf</b></br>
