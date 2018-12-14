@@ -1,4 +1,19 @@
-﻿# README
+   * [README](#readme)
+      * [Programs for analysis of solvent flow in molecular dynamics simulations](#programs-for-analysis-of-solvent-flow-in-molecular-dynamics-simulations)
+         * [Workflow](#workflow)
+         * [Dependencies](#dependencies)
+         * [Input files](#input-files)
+         * [Required TFIELD configuration parameters](#required-tfield-configuration-parameters)
+         * [Optional TFIELD parameters](#optional-tfield-parameters)
+         * [TFIELD output options](#tfield-output-options)
+         * [STREAMLINE configuration parameters](#streamline-configuration-parameters)
+         * [Getting help with the configuration:](#getting-help-with-the-configuration)
+         * [Output of the “streamline” program:](#output-of-the-streamline-program)
+         * [References:](#references)
+
+Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
+
+# README
 ## Programs for analysis of solvent flow in molecular dynamics simulations
 ![streamlines.png](https://bitbucket.org/repo/qExpaGG/images/3181802118-streamlines.png)
 
