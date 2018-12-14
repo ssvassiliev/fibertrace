@@ -21,8 +21,8 @@ LAPACK, BLAS
 
 #### Required TFIELD configuration parameters
 The following parameters are required for every tensor field calculation:
-* XMIN, XMAX, YMIN, YMAX, ZMIN, ZMAX
-**Description:** These keywords define ROI. ROI can be either the whole simulation box or only an essential part of it. Cropping ROI can dramatically speed up calculations when the simulation system is very big. 
+* XMIN, XMAX, YMIN, YMAX, ZMIN, ZMAX</br>
+**Description:** These keywords define ROI. ROI can be either the whole simulation box or only an essential part of it. Cropping ROI can dramatically speed up calculations when the simulation system is very big.</br> 
 **Default Values:** MIN = -20.0, MAX = +20.0
 
 * BOXX, BOXY, BOXZ
@@ -37,8 +37,8 @@ The following parameters are required for every tensor field calculation:
 **Default value:** 5.0
 
 ### Optional TFIELD parameters 
-* DENSITY
-**Description:** Grid density (1/Angstrom)\
+* DENSITY</br>
+**Description:** Grid density (1/Angstrom)</br>
 **Default value:**  1.0
 
 * CUTOFF
