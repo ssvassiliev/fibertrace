@@ -16,7 +16,7 @@ Table of Contents
          * [References:](#references)
 
 Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
-# Fibertrace
+﻿# Fibertrace
 ## Programs for analysis of solvent flow in molecular dynamics simulations
 ![streamlines.png](https://bitbucket.org/repo/qExpaGG/images/3181802118-streamlines.png)
 
@@ -57,7 +57,7 @@ The following parameters are required for every tensor field calculation:
     **Default value:** none
     
 -   TSCALE  
-    **Description:** The time interval between frames in the trajectory multiplied by FSTEP.  
+    **Description:** The time interval between frames in the trajectory multiplied by FSTEP in picoseconds.  
     **Default value:** 5.0
     
 
