@@ -111,7 +111,7 @@ The following parameters are required for every tensor field calculation:
 
 ### Running the programs:
 `./tensors < tfield.conf`\
-`./streamline < steamline.conf`
+`./streamline < streamline.conf`
 
 Or:\
 `cd test`\
