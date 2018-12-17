@@ -96,7 +96,7 @@ The following parameters are required for every tensor field calculation:
     **Description:** These keywords define ROI.\
     **Default Values:** None
 
--   res
+-   res\
     **Description:** Tensor field density (1/Angstrom)\
     **Default value:** 1.0
 
