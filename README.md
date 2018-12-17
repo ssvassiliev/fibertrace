@@ -57,7 +57,7 @@ The following parameters are required for every tensor field calculation:
 
 ### Optional TFIELD parameters
 -   DENSITY\
-    **Description:** Grid density (1/Angstrom)\
+    **Description:** Grid density, &#8491;<sup>-1</sup>
     **Default value:** 1.0
 -   CUTOFF\
     **Description:** Only grid cells with water occupancy higher than CUTOFF will be used for calculation of tensor field.\
@@ -98,7 +98,7 @@ The following parameters are required for every tensor field calculation:
 
 -   res\
 
-    **Description:** Tensor field density (&#8491;<sup>-1</sup>)\
+    **Description:** Tensor field density, &#8491;<sup>-1</sup>\
     **Default value:** 1.0
 
 ### Running the programs:
