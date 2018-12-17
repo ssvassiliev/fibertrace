@@ -97,7 +97,6 @@ The following parameters are required for every tensor field calculation:
     **Default Values:** None
 
 -   res\
-
     **Description:** Tensor field density, &#8491;<sup>-1</sup>\
     **Default value:** 1.0
 
