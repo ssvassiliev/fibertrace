@@ -24,18 +24,14 @@ Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
 </p>
 
 ## Workflow
-
 The analysis is performed in two steps:
-
 1.  3D diffusion tensor field is calculated using the program **tfield**
 2.  Streamline analysis in the spirit of MRI fiber tractography is performed using the **streamline** program.
 
 ## Dependencies
-
 LAPACK, BLAS
 
 ## Input files
-
 -   Molecular parameters in amber7 format.
 -   Molecular dynamics trajectory in dcd format.
 -   TFIELD parameters.
@@ -44,60 +40,46 @@ LAPACK, BLAS
 ## Program parameters and output options
 ### Required TFIELD configuration parameters
 The following parameters are required for every tensor field calculation:
-
 -   XMIN, XMAX, YMIN, YMAX, ZMIN, ZMAX\
     **Description:** These keywords define ROI. ROI can be either the whole simulation box or only an essential part of it. Cropping ROI can dramatically speed up calculations when the simulation system is very big.\
-    **Default Values:** MIN = -20.0, MAX = +20.0
-
+    **Default Values:** MIN = -20.0, MAX = +20.0\
 -   BOXX, BOXY, BOXZ\
     **Description:** Maximum allowed water displacement. Some water molecules located close to the box boundary may jump from one side of the box to another between consecutive frames. These waters will have huge velocities and they will create strong artifacts seen as straight lines parallel to axes. Setting BOXX, BOXY, BOXZ somewhat smaller than box dimensions will eliminate these artifacts.\
-    **Default Value:** 20.0
-
+    **Default Value:** 20.0\
 -   PRMTOP, LOADDCD\
     **Description:** Paths to parameter and trajectory files.\
-    **Default value:** none
-
+    **Default value:** none\
 -   TSCALE\
     **Description:** The time interval between frames in the trajectory multiplied by FSTEP in picoseconds.\
     **Default value:** 5.0
 
-
 ### Optional TFIELD parameters
-
 -   DENSITY\
     **Description:** Grid density (1/Angstrom)\
-    **Default value:** 1.0
-
+    **Default value:** 1.0\
 -   CUTOFF\
     **Description:** Only grid cells with water occupancy higher than CUTOFF will be used for calculation of tensor field.\
-    **Default value:** 0.001
-
+    **Default value:** 0.001\
 -   FSTEP\
     **Description:** If the time interval between trajectory frames is small it is possible to increase it for computation of water displacements. For example, if FSTEP is 1 displacement is calculated from frames 1-0, 2-1, 3-2 … If FSTEP is 2, it is calculated from frames 2-0, 3-1, 4-2 …\
     **Default value:** 1
 
 ### TFIELD output options
-
 -   ADC\
     **Description:** Save apparent diffusion coefficient map. Values are saved in the occupancy field of the file ADC.pdb. The weighting factors (grid occupancy) are saved in the beta field\
-    **Default value:** 1 (YES)
-
+    **Default value:** 1 (YES)\
 -   FA\
     **Description:** Save fractional anisotropy map. Values are saved in the occupancy field of the file FA.pdb\
-    **Default value:** 1 (YES)
-
+    **Default value:** 1 (YES)\
 -   DIFF\
     **Description:** Save diffusion map. Values are saved in the occupancy field of the file diff.pdb\
-    **Default value:** 1 (YES)
-
+    **Default value:** 1 (YES)\
 -   HYDRO\
     **Description:** Save water oxygen density map. Values are saved in the occupancy field of the file Hydrogen.pdb\
-    **Default value:** 1 (YES)
-
+    **Default value:** 1 (YES)\
 -   OXY\
     **Description:** Save water hydrogen density map. Values are saved in the occupancy field of the file Oxygen.pdb\
-    **Default value:** 1 (YES)
-
+    **Default value:** 1 (YES)\
 -   TENSORS\
     **Description:** Save diffusion tensors. Tensors are saved in the file tensors.sit\
     **Default value:** 1 (YES)
@@ -105,8 +87,7 @@ The following parameters are required for every tensor field calculation:
 ### STREAMLINE configuration parameters
 -   xmin, xmax, ymin, ymax, zmin, zmax\
     **Description:** These keywords define ROI.\
-    **Default Values:** None
-
+    **Default Values:** None\
 -   res\
     **Description:** Tensor field density (1/Angstrom)\
     **Default value:** 1.0
