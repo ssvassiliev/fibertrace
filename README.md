@@ -99,7 +99,7 @@ The following parameters are required for every tensor field calculation:
 -   res\
 
     **Description:** Tensor field density (1/Angstrom)\
-    **Default value:** 1.0
+    **Default value:** 1.0 &sum; 
 
 ### Running the programs:
 `./tensors < tfield.conf`\
@@ -107,7 +107,7 @@ The following parameters are required for every tensor field calculation:
 
 Or:\
 `cd test`\
-`./run_test.sh`
+`./run_test.sh`a
 
 ## Getting help with the configuration:
 
