@@ -2,7 +2,6 @@
 Table of Contents
 
    * [Fibertrace: programs for analysis of solvent flow in molecular dynamics simulations](#fibertrace-programs-for-analysis-of-solvent-flow-in-molecular-dynamics-simulations)
-      * [Workflow](#workflow)
       * [Dependencies](#dependencies)
       * [Input files](#input-files)
       * [Program parameters and output options](#program-parameters-and-output-options)
@@ -10,6 +9,7 @@ Table of Contents
          * [Optional TFIELD parameters](#optional-tfield-parameters)
          * [TFIELD output options](#tfield-output-options)
          * [STREAMLINE configuration parameters](#streamline-configuration-parameters)
+         * [Running the programs:\](#running-the-programs)
       * [Getting help with the configuration:](#getting-help-with-the-configuration)
       * [Output of the “streamline” program:](#output-of-the-streamline-program)
       * [References:](#references)
@@ -19,10 +19,8 @@ Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
 
 <p align="center">
   <img src="https://bitbucket.org/repo/qExpaGG/images/3181802118-streamlines.png">
+  The flow of water in squalene-hopene cyclase computed from 100 ns long molecular dynamics simulation
 </p>
-
-The flow of water in squalene-hopene cyclase computed from 100 ns long molecular dynamics simulation
-
 ## Workflow
 
 The analysis is performed in two steps:
@@ -111,13 +109,13 @@ The following parameters are required for every tensor field calculation:
     **Description:** Tensor field density (1/Angstrom)\
     **Default value:** 1.0
 
-Run the programs:
-./tensors < tfield.conf
-./streamline < steamline.conf
+### Running the programs:\
+`./tensors < tfield.conf\`
+`./streamline < steamline.conf`
 
-Or:
-cd test
-./run_test.sh
+Or:\
+`cd test\`
+`./run_test.sh`
 
 ## Getting help with the configuration:
 
