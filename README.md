@@ -109,8 +109,9 @@ The following parameters are required for every tensor field calculation:
         **Default value:** 70.0 degrees
 
 -   seed_dens\
-        **Description:** Density of seed points. Seed points with high anisotropy. These points are used as a starting points for propagation of streamlines. Higher value of seed_dens will result in more streamlines.
-        **Default value:** 1.0 &#8491;<sup>-1</sup>
+        **Description:** Density of seed points. Seed points with high anisotropy. These points are used as a starting points for propagation of streamlines. Higher value of seed_dens will result in more streamlines.\
+        **Default value:** 2.0 &#8491;<sup>-1</sup>
+
 
 ### Running the programs:
 `./tensors < tfield.conf`\
