@@ -9,13 +9,13 @@ Table of Contents
          * [Optional TFIELD parameters](#optional-tfield-parameters)
          * [TFIELD output options](#tfield-output-options)
          * [STREAMLINE configuration parameters](#streamline-configuration-parameters)
-         * [Running the programs:\](#running-the-programs)
+         * [Running the programs:](#running-the-programs)
       * [Getting help with the configuration:](#getting-help-with-the-configuration)
       * [Output of the “streamline” program:](#output-of-the-streamline-program)
       * [References:](#references)
 
 Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
-﻿# Fibertrace: programs for analysis of solvent flow in molecular dynamics simulations
+# Fibertrace: programs for analysis of solvent flow in molecular dynamics simulations
 
 <p align="center">
   <img src="https://bitbucket.org/repo/qExpaGG/images/3181802118-streamlines.png">
@@ -109,7 +109,7 @@ The following parameters are required for every tensor field calculation:
     **Description:** Tensor field density (1/Angstrom)\
     **Default value:** 1.0
 
-### Running the programs:\
+### Running the programs:
 `./tensors < tfield.conf\`
 `./streamline < steamline.conf`
 
