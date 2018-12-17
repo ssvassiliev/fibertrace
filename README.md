@@ -1,4 +1,21 @@
-﻿# Fibertrace: programs for analysis of solvent flow in molecular dynamics simulations
+
+Table of Contents
+
+   * [Fibertrace: programs for analysis of solvent flow in molecular dynamics simulations](#fibertrace-programs-for-analysis-of-solvent-flow-in-molecular-dynamics-simulations)
+      * [Workflow](#workflow)
+      * [Dependencies](#dependencies)
+      * [Input files](#input-files)
+      * [Program parameters and output options](#program-parameters-and-output-options)
+         * [Required TFIELD configuration parameters](#required-tfield-configuration-parameters)
+         * [Optional TFIELD parameters](#optional-tfield-parameters)
+         * [TFIELD output options](#tfield-output-options)
+         * [STREAMLINE configuration parameters](#streamline-configuration-parameters)
+      * [Getting help with the configuration:](#getting-help-with-the-configuration)
+      * [Output of the “streamline” program:](#output-of-the-streamline-program)
+      * [References:](#references)
+
+Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
+# Fibertrace: programs for analysis of solvent flow in molecular dynamics simulations
 
 ![streamlines.png](https://bitbucket.org/repo/qExpaGG/images/3181802118-streamlines.png)
 
@@ -26,70 +43,70 @@ LAPACK, BLAS
 ### Required TFIELD configuration parameters
 The following parameters are required for every tensor field calculation:
 
--   XMIN, XMAX, YMIN, YMAX, ZMIN, ZMAX
-    **Description:** These keywords define ROI. ROI can be either the whole simulation box or only an essential part of it. Cropping ROI can dramatically speed up calculations when the simulation system is very big.
+-   XMIN, XMAX, YMIN, YMAX, ZMIN, ZMAX\
+    **Description:** These keywords define ROI. ROI can be either the whole simulation box or only an essential part of it. Cropping ROI can dramatically speed up calculations when the simulation system is very big.\
     **Default Values:** MIN = -20.0, MAX = +20.0
 
--   BOXX, BOXY, BOXZ
-    **Description:** Maximum allowed water displacement. Some water molecules located close to the box boundary may jump from one side of the box to another between consecutive frames. These waters will have huge velocities and they will create strong artifacts seen as straight lines parallel to axes. Setting BOXX, BOXY, BOXZ somewhat smaller than box dimensions will eliminate these artifacts.
+-   BOXX, BOXY, BOXZ\
+    **Description:** Maximum allowed water displacement. Some water molecules located close to the box boundary may jump from one side of the box to another between consecutive frames. These waters will have huge velocities and they will create strong artifacts seen as straight lines parallel to axes. Setting BOXX, BOXY, BOXZ somewhat smaller than box dimensions will eliminate these artifacts.\
     **Default Value:** 20.0
 
--   PRMTOP, LOADDCD
-    **Description:** Paths to parameter and trajectory files.
+-   PRMTOP, LOADDCD\
+    **Description:** Paths to parameter and trajectory files.\
     **Default value:** none
 
--   TSCALE
-    **Description:** The time interval between frames in the trajectory multiplied by FSTEP in picoseconds.
+-   TSCALE\
+    **Description:** The time interval between frames in the trajectory multiplied by FSTEP in picoseconds.\
     **Default value:** 5.0
 
 
 ### Optional TFIELD parameters
 
--   DENSITY
-    **Description:** Grid density (1/Angstrom)
+-   DENSITY\
+    **Description:** Grid density (1/Angstrom)\
     **Default value:** 1.0
 
--   CUTOFF
-    **Description:** Only grid cells with water occupancy higher than CUTOFF will be used for calculation of tensor field.
+-   CUTOFF\
+    **Description:** Only grid cells with water occupancy higher than CUTOFF will be used for calculation of tensor field.\
     **Default value:** 0.001
 
--   FSTEP
-    **Description:** If the time interval between trajectory frames is small it is possible to increase it for computation of water displacements. For example, if FSTEP is 1 displacement is calculated from frames 1-0, 2-1, 3-2 … If FSTEP is 2, it is calculated from frames 2-0, 3-1, 4-2 …
+-   FSTEP\
+    **Description:** If the time interval between trajectory frames is small it is possible to increase it for computation of water displacements. For example, if FSTEP is 1 displacement is calculated from frames 1-0, 2-1, 3-2 … If FSTEP is 2, it is calculated from frames 2-0, 3-1, 4-2 …\
     **Default value:** 1
 
 ### TFIELD output options
 
--   ADC
-    **Description:** Save apparent diffusion coefficient map. Values are saved in the occupancy field of the file ADC.pdb. The weighting factors (grid occupancy) are saved in the beta field
+-   ADC\
+    **Description:** Save apparent diffusion coefficient map. Values are saved in the occupancy field of the file ADC.pdb. The weighting factors (grid occupancy) are saved in the beta field\
     **Default value:** 1 (YES)
 
--   FA
-    **Description:** Save fractional anisotropy map. Values are saved in the occupancy field of the file FA.pdb
+-   FA\
+    **Description:** Save fractional anisotropy map. Values are saved in the occupancy field of the file FA.pdb\
     **Default value:** 1 (YES)
 
--   DIFF
-    **Description:** Save diffusion map. Values are saved in the occupancy field of the file diff.pdb
+-   DIFF\
+    **Description:** Save diffusion map. Values are saved in the occupancy field of the file diff.pdb\
     **Default value:** 1 (YES)
 
--   HYDRO
-    **Description:** Save water oxygen density map. Values are saved in the occupancy field of the file Hydrogen.pdb
+-   HYDRO\
+    **Description:** Save water oxygen density map. Values are saved in the occupancy field of the file Hydrogen.pdb\
     **Default value:** 1 (YES)
 
--   OXY
-    **Description:** Save water hydrogen density map. Values are saved in the occupancy field of the file Oxygen.pdb
+-   OXY\
+    **Description:** Save water hydrogen density map. Values are saved in the occupancy field of the file Oxygen.pdb\
     **Default value:** 1 (YES)
 
--   TENSORS
-    **Description:** Save diffusion tensors. Tensors are saved in the file tensors.sit
+-   TENSORS\
+    **Description:** Save diffusion tensors. Tensors are saved in the file tensors.sit\
     **Default value:** 1 (YES)
 
 ### STREAMLINE configuration parameters
--   xmin, xmax, ymin, ymax, zmin, zmax
-    **Description:** These keywords define ROI.
+-   xmin, xmax, ymin, ymax, zmin, zmax\
+    **Description:** These keywords define ROI.\
     **Default Values:** None
 
--   res
-    **Description:** Tensor field density (1/Angstrom)
+-   res\
+    **Description:** Tensor field density (1/Angstrom)\
     **Default value:** 1.0
 
 Run the programs:
