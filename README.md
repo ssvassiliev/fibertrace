@@ -97,11 +97,12 @@ The following parameters are required for every tensor field calculation:
     **Default Values:** None
 
 -   res\
+
     **Description:** Tensor field density (1/Angstrom)\
     **Default value:** 1.0
 
 ### Running the programs:
-`./tensors < tfield.conf`
+`./tensors < tfield.conf`\
 `./streamline < streamline.conf`
 
 Or:\
