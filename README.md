@@ -16,7 +16,7 @@ Table of Contents
          * [References:](#references)
 
 Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
-﻿# Fibertrace
+# Fibertrace
 ## Programs for analysis of solvent flow in molecular dynamics simulations
 ![streamlines.png](https://bitbucket.org/repo/qExpaGG/images/3181802118-streamlines.png)
 
