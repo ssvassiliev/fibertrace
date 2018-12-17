@@ -52,7 +52,7 @@ The following parameters are required for every tensor field calculation:
     **Description:** Paths to parameter and trajectory files.\
     **Default value:** none\
 -   TSCALE\
-    **Description:** The time interval between frames in the trajectory multiplied by FSTEP in picoseconds.\
+    **Description:** The time interval between frames in the trajectory multiplied by FSTEP, picoseconds.\
     **Default value:** 5.0
 
 ### Optional TFIELD parameters
@@ -99,6 +99,18 @@ The following parameters are required for every tensor field calculation:
 -   res\
     **Description:** Tensor field density, &#8491;<sup>-1</sup>\
     **Default value:** 1.0
+
+-   minlen, maxlen\
+        **Description:** Minimal and maximal allowed length of a streamline. Streamlines shorter than minlen will be discarded. A streamline is terminated when its length reaches maxlen.
+        **Default values:** minlen = 6.0, maxlen = 80.0 &#8491;
+
+-   max_turn\
+        **Description:** Maximal allowed angular turn from the previous location of a point in a streamline.
+        **Default value:** 70.0 degrees
+
+-   seed_dens\
+        **Description:** Density of seed points. Seed points with high anisotropy. These points are used as a starting points for propagation of streamlines. Higher value of seed_dens will result in more streamlines.
+        **Default value:** 1.0 &#8491;<sup>-1</sup>
 
 ### Running the programs:
 `./tensors < tfield.conf`\
