@@ -110,11 +110,11 @@ The following parameters are required for every tensor field calculation:
     **Default value:** 1.0
 
 ### Running the programs:
-`./tensors < tfield.conf\`
+`./tensors < tfield.conf`\
 `./streamline < steamline.conf`
 
 Or:\
-`cd test\`
+`cd test`\
 `./run_test.sh`
 
 ## Getting help with the configuration:
