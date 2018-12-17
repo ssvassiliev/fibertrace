@@ -15,9 +15,11 @@ Table of Contents
       * [References:](#references)
 
 Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
-# Fibertrace: programs for analysis of solvent flow in molecular dynamics simulations
+﻿# Fibertrace: programs for analysis of solvent flow in molecular dynamics simulations
 
-![streamlines.png](https://bitbucket.org/repo/qExpaGG/images/3181802118-streamlines.png)
+<p align="center">
+  <img src="https://bitbucket.org/repo/qExpaGG/images/3181802118-streamlines.png">
+</p>
 
 The flow of water in squalene-hopene cyclase computed from 100 ns long molecular dynamics simulation
 
