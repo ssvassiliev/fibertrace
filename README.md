@@ -98,8 +98,8 @@ The following parameters are required for every tensor field calculation:
 
 -   res\
 
-    **Description:** Tensor field density (1/Angstrom)\
-    **Default value:** 1.0 &sum; 
+    **Description:** Tensor field density (&#8491;<sup>-1</sup>)\
+    **Default value:** 1.0
 
 ### Running the programs:
 `./tensors < tfield.conf`\
