@@ -2,6 +2,7 @@
 Table of Contents
 
    * [Fibertrace: programs for analysis of solvent flow in molecular dynamics simulations](#fibertrace-programs-for-analysis-of-solvent-flow-in-molecular-dynamics-simulations)
+      * [Intoduction](#intoduction)
       * [Workflow](#workflow)
       * [Dependencies](#dependencies)
       * [Input files](#input-files)
@@ -23,9 +24,24 @@ Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
   The flow of water in squalene-hopene cyclase computed from 100 ns long molecular dynamics simulation
 </p>
 
+## Intoduction
+
+Streamline analysis is based on the determination of the 3D velocity field and subsequent calculation of the motion of the massless fluid element in it. To determine velocity field the simulation system volume is divided into *n* small cubic elements (voxels) with a volume of ~1&#8491;<sup>3</sup> each. For all voxels containing a water molecule the diffusion tensor elements are calculated according to the Einstein relation:<br><br>
+
+<img src="https://www.codecogs.com/gif.latex?T^\alpha^\beta&space;=&space;{}\frac{\left&space;\langle&space;\alpha(t&plus;\Delta&space;t)-\alpha&space;(t)\right&space;\rangle\left\langle&space;\beta(t&plus;\Delta&space;t)-\beta&space;(t)&space;\right&space;\rangle}{2\Delta&space;t}\qquad&space;\alpha&space;,\beta&space;=&space;\left&space;\{&space;x,y,z&space;\right&space;\}" /><br>
+
+To obtain all nine tensor elements, &#945; and &#946; are sequentially substituted with *x*, *y*, and *z* coordinates of a water molecule. Tensor elements are averaged over the time window of the molecular dynamics run, then eigenvalues  &#955; and eigenvectors &#957; are obtained by diagonalization of the diffusion tensors.
+From the eigenvalues apparent diffusion coefficient (*ADC*) and fractional anisotropy (*FA*) are calculated:<br>
+
+<img src="https://latex.codecogs.com/gif.latex?ADC=\frac{\lambda_1&plus;\lambda_2&plus;\lambda_3}{3}" title="ADC=\frac{\lambda_1+\lambda_2+\lambda_3}{3}" /><br>
+
+ <img src="https://www.codecogs.com/gif.latex?FA=\sqrt{\frac{3}{2}}\sqrt{\frac{\left(\lambda_1-\frac{\lambda_1&plus;\lambda_2&plus;\lambda_3}{3}\right)^2&plus;\left&space;(\lambda_2-\frac{\lambda_1&plus;\lambda_2&plus;\lambda_3}{3}\right&space;)^2&plus;\left&space;(\lambda_3-\frac{\lambda_1&plus;\lambda_2&plus;\lambda_3}{3}\right&space;)^2}{\lambda_1^2&plus;\lambda_2^2&plus;\lambda_3^2}}" /><br>
+
+*FA* has values between 0 and 1. A value of 0 corresponds to completely isotropic diffusion in all directions, a value of 1 corresponds to diffusion only along one axis.
+
 ## Workflow
 The analysis is performed in two steps:
-1.  3D diffusion tensor field is calculated using the program **tfield**
+1.  3D diffusion tensor field is calculated and diagonalized using the program **tfield**
 2.  Streamline analysis in the spirit of MRI fiber tractography is performed using the **streamline** program.
 
 ## Dependencies
@@ -79,6 +95,10 @@ The following parameters are required for every tensor field calculation:
 -   DIFF\
     **Description:** Save diffusion map. Values are saved in the occupancy field of the file diff.pdb\
     **Default value:** 1 (YES)
+    displacement[ij]  = 0.5 * delta(i)*delta(j)/Tscale
+    grid = 1000 * sum_all_frames( disp(xx)+disp(yy)+disp(zz) ) / (6*Tscale*(nframes-5) )
+    saved in diff.pdb
+
 
 -   HYDRO\
     **Description:** Save water oxygen density map. Values are saved in the occupancy field of the file Hydrogen.pdb\
@@ -109,12 +129,12 @@ The following parameters are required for every tensor field calculation:
         **Default value:** 70.0 degrees
 
 -   seed_dens\
-        **Description:** Density of seed points. Seed points with high anisotropy. These points are used as a starting points for propagation of streamlines. Higher value of seed_dens will result in more streamlines.\
+        **Description:** Density of seed points. Seed points are points with high diffusion coefficient and anisotropy. These points are used as a starting points for propagation of streamlines. Higher value of seed_dens will result in more streamlines.\
         **Default value:** 2.0 &#8491;<sup>-1</sup>
 
 
 ### Running the programs:
-`./tensors < tfield.conf`\
+`./tensors < tfield.conf`
 `./streamline < streamline.conf`
 
 Or:\
@@ -126,12 +146,11 @@ Or:\
 Run “tensors” program interactively (without input from configuration files) and type “help” at the prompt.
 
 ## Output of the “streamline” program:
+Streamlines are saved in mol2 file format as atoms with atom name CA and residue name STR. Each streamline is represented as one residue i.e. same residue ID is assigned to all atoms of a streamline. Additional information is saved in the charge column of mol2 files (the last column). The streamline program saves calculation results in 3 mol2 files:
 
-1.  Streamlines color-coded by anisotropy: streamline_A.mol2
-2.  Streamlines color-coded by diffusion: streamline_D.mol2
-3.  Streamlines color-coded by direction: streamline_XYZ.mol2
-
-The color code is saved in the charge section of mol2 files. To visualize streamlines colored by direction use shell script “load\_streamlines\_mol2.sh” (requires VMD).
+1.  Fractional anisotropy is saved in the streamline_A.mol2
+2.  The largest eigenvalue of the diffusion tensor ( &#955;<sub>1</sub> ) is saved in the streamline_D.mol2.  It shows diffusivity (the rate of diffusion) in the direction tangent to streamlines.
+3.  Direction of the streamlines is saved in streamline_XYZ.mol2. Unit vector tangent to a streamline at each point is encoded into a floating point number (color code). Streamlines colored by direction can be visualized in VMD using shell script “load\_streamlines\_mol2.sh”.
 
 ## References:
 
