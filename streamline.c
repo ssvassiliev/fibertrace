@@ -180,8 +180,8 @@ int main(int argc, char** argv) {
 
   char usage[]="\n"
     " ------------------------------------------------------------------\n"
-    " * This is streamline tracing  routine with optional mls filtering *\n"
-    " * Normal usage: fibertrace < values.in                            *\n"
+    " * This is streamline tracing routine with optional mls filtering  *\n"
+    " * Normal usage: streamline < values.in                            *\n"
     " * Tensor field read from file: tensors.sit                        *\n"
     " * Streamlines saved in file: streamline.mol2                      *\n"
     " ------------------------------------------------------------------\n"
@@ -202,9 +202,9 @@ int main(int argc, char** argv) {
 
   float min_ani_seed = 0.5; // starting seed points minimal anisotropy
   float min_ani_fiber = 0.1; // minimal anisotropy
-  float min_length = 20; // minimal length of a single fiber
+  float min_length = 6; // minimal length of a single fiber
   float max_length = 80; // maximal length of a single fiber
-  float max_turn = 70; // maximal angular turn from the previous location of a point in a fiber
+  float max_turn = 70; // maximal angular turn from the previous location of a point in a streamline
   float min_lambda = 0.1; // minimal eigenvalue
   float seed_dens = 2; // density of seed points
   int i_start, i_end;
