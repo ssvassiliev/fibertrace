@@ -73,8 +73,8 @@ The following parameters are required for every tensor field calculation:
 
 ### Optional TFIELD parameters
 -   DENSITY\
-    **Description:** Grid density, &#8491;<sup>-1</sup>
-    **Default value:** 1.0
+    **Description:** Grid density.\
+    **Default value:** 1.0 &#8491;<sup>-1</sup>
 -   CUTOFF\
     **Description:** Only grid cells with water occupancy higher than CUTOFF will be used for calculation of tensor field.\
     **Default value:** 0.001
@@ -187,4 +187,3 @@ Streamlines are saved in mol2 file format as atoms with atom name CA and residue
 
 1.  C. Gustafsson, S. Vassiliev, C. Kurten, P.-O. Syren, T. Brinck, MD simulations reveal complex water paths in squalene-hopene cyclase - tunnel obstructing mutations alter the movements of water in the active site, ACS Omega. submitted (2017).
 2.  S. Vassiliev, P. Comte, A. Mahboob, D. Bruce, Tracking the Flow of Water through Photosystem II Using Molecular Dynamics and Streamline Tracing, Biochemistry. 49 (2010) 1873–1881. doi:10.1021/bi901900s.
-
