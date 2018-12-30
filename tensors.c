@@ -163,6 +163,7 @@ void WaterDensity(Setup* S) {
   int t1_index = 0; int t2_index = 0;
   float x_avg[2], y_avg[2], z_avg[2];
   float maxDS = -1.0f;
+  float maxGrid=0;
   int idx=0;
 
   printf("\n\nComputing water density..\n");
@@ -295,7 +296,7 @@ void WaterDensity(Setup* S) {
 		      if (displacement.zz*2*timescale < S->bz*S->bz)
 			if (gridDS[x_index][y_index][z_index] >= cut_off) {
 			  tensor_count[x_index][y_index][z_index]++;
-			  grid[x_index][y_index][z_index] += (displacement.xx*displacement.xx+displacement.yy*displacement.yy+displacement.zz*displacement.zz);
+			  grid[x_index][y_index][z_index] += 2*(displacement.xx+displacement.yy+displacement.zz);
 			  gridXX[x_index][y_index][z_index] += displacement.xx;
 			  gridXY[x_index][y_index][z_index] += displacement.xy;
 			  gridYY[x_index][y_index][z_index] += displacement.yy;
@@ -318,8 +319,9 @@ void WaterDensity(Setup* S) {
       for(k=0; k<nb_elementsZ; k++)
 	{
           if(tensor_count[i][j][k] == 0.0) tensor_count[i][j][k] = 1.0;
-	  grid[i][j][k]   /= (6*timescale*(total_frames-5));
-	  grid[i][j][k]   *= 1000;
+	  grid[i][j][k]   /= (6*tensor_count[i][j][k]);
+    if(grid[i][j][k]>maxGrid)maxGrid=grid[i][j][k];
+//	  grid[i][j][k]   *= 1000;
 	  gridO[i][j][k]  /= total_frames;
 	  gridO[i][j][k]  *= 1000;
 	  gridH[i][j][k]  /= total_frames;
@@ -459,12 +461,14 @@ void WaterDensity(Setup* S) {
   }
 
   printf("\n\n             ** IMPORTANT **\n ADC values in ADC.pdb are scaled (max_ADC = 99.99)  \n Multiply ADC by %e to undo scaling\n", maxADC/99.99);
+  printf("\n\n             ** IMPORTANT **\n diff values in diff.pdb are scaled (max_Diff = 99.99)  \n Multiply Diff by %e to undo scaling\n", maxGrid/99.99);
   if (S->diff=='1') fp1 = fopen("diff.pdb","wt+");
   if (S->oxy=='1') fp2 = fopen("OxygenOUTPDB.pdb","wt+");
   if (S->hydro=='1') fp3 = fopen("HydrogenOUTPDB.pdb","wt+");
   if (S->adc=='1') {
     fp4 = fopen("ADC.pdb","wt+");
     fprintf(fp4,"ADC correction factor = %e\n", maxADC/99.99);
+    fprintf(fp1,"Diff correction factor = %e\n", maxGrid/99.99);
   }
   if (S->fa=='1') fp5 = fopen("FA.pdb","wt+");
   printf("\n");
@@ -544,7 +548,7 @@ void WaterDensity(Setup* S) {
     for(j=0; j<nb_elementsY; j++) {
       for(i=0; i<nb_elementsX; i++) {
 	if (S->diff=='1') if(grid[i][j][k]>0.0f) {
-	    fprintf(fp1,"ATOM %6li %s %s %5li    %8.3f%8.3f%8.3f%6.2f%6.2f \n",(long int)count1+1,"DENS","WAT",(long int)1,i*res+x_min+res/2,j*res+y_min+res/2,k*res+z_min+res/2,grid[i][j][k],0.0f);
+	    fprintf(fp1,"ATOM %6li %s %s %5li    %8.3f%8.3f%8.3f%6.2f%6.2f \n",(long int)count1+1,"DENS","WAT",(long int)1,i*res+x_min+res/2,j*res+y_min+res/2,k*res+z_min+res/2,grid[i][j][k]*99.99/maxGrid,0.0f);
 	  }
  	if (S->oxy=='1') if(gridO[i][j][k]>0.0f) {
 	    fprintf(fp2,"ATOM %6li %s %s %5li    %8.3f%8.3f%8.3f%6.2f%6.2f \n",(long int)count1+1,"DENS","WAT",(long int)1,i*res+x_min+res/2,j*res+y_min+res/2,k*res+z_min+res/2,gridO[i][j][k],0.0f);
