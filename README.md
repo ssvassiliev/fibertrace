@@ -132,7 +132,7 @@ The following parameters are required for every tensor field calculation:
         **Default value:** 70.0 degrees
 
 -   minaniseed\
-        **Description:** Minimal liner anisotropy *c* of seed points.<br><img src="https://latex.codecogs.com/gif.latex?c&space;=&space;\frac{\lambda_1-\lambda_2}{\lambda_1&space;&plus;\lambda_2&space;&plus;\lambda_3}" title="c = \frac{\lambda_1-\lambda_2}{\lambda_1 +\lambda_2 +\lambda_3}" /><br>  Seed points are points with *c* > minaniseed. These points are used as a starting points for propagation of streamlines. Lower value of minaniseed will result in less streamlines.\
+        **Description:** Minimal linear anisotropy *c* of seed points.<br><img src="https://latex.codecogs.com/gif.latex?c&space;=&space;\frac{\lambda_1-\lambda_2}{\lambda_1&space;&plus;\lambda_2&space;&plus;\lambda_3}" title="c = \frac{\lambda_1-\lambda_2}{\lambda_1 +\lambda_2 +\lambda_3}" /><br>  Seed points are points with *c* > minaniseed. These points are used as a starting points for propagation of streamlines. Lower value of minaniseed will result in less streamlines.\
         **Default value:** 0.5
 
 -   seeddens\
