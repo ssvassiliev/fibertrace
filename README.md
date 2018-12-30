@@ -2,7 +2,7 @@
 Table of Contents
 
    * [Fibertrace: programs for analysis of solvent flow in molecular dynamics simulations](#fibertrace-programs-for-analysis-of-solvent-flow-in-molecular-dynamics-simulations)
-      * [Intoduction](#intoduction)
+      * [Introduction](#introduction)
       * [Workflow](#workflow)
       * [Dependencies](#dependencies)
       * [Input files](#input-files)
@@ -24,9 +24,9 @@ Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
   The flow of water in squalene-hopene cyclase computed from 100 ns long molecular dynamics simulation
 </p>
 
-## Intoduction
+## Introduction
 
-Streamline analysis is based on the determination of the 3D velocity field and subsequent calculation of the motion of the massless fluid element in it. To determine velocity field the simulation system volume is divided into *n* small cubic elements (voxels) with a volume of ~1&#8491;<sup>3</sup> each. For all voxels containing a water molecule the diffusion tensor elements are calculated according to the Einstein relation:<br><br>
+Streamline analysis is based on the determination of the 3D velocity field and the subsequent calculation of the motion of the massless fluid element in it. To determine velocity field the simulation system volume is divided into *n* small cubic elements (voxels) with a volume of ~1&#8491;<sup>3</sup> each. For all voxels containing a water molecule, the diffusion tensor elements are calculated according to the Einstein relation:<br><br>
 
 <img src="https://www.codecogs.com/gif.latex?T^\alpha^\beta&space;=&space;{}\frac{\left&space;\langle&space;\alpha(t&plus;\Delta&space;t)-\alpha&space;(t)\right&space;\rangle\left\langle&space;\beta(t&plus;\Delta&space;t)-\beta&space;(t)&space;\right&space;\rangle}{2\Delta&space;t}\qquad&space;\alpha&space;,\beta&space;=&space;\left&space;\{&space;x,y,z&space;\right&space;\}" /><br>
 
@@ -93,11 +93,10 @@ The following parameters are required for every tensor field calculation:
     **Default value:** 1 (YES)
 
 -   DIFF\
-    **Description:** Save diffusion map. Values are saved in the occupancy field of the file diff.pdb\
+    **Description:** Save diffusion coefficient map. Values are saved in the occupancy field of the file diff.pdb. This is the same coefficient as saved in ADC.pdb, but obtained directly from the mean square displacement:
+
+    <img src="https://latex.codecogs.com/gif.latex?D=\left&space;\langle&space;\frac{\Delta&space;x^{2}&plus;\Delta&space;y^{2}&plus;\Delta&space;z^{2}}{6\Delta&space;t}&space;\right&space;\rangle" title="D=\left \langle \frac{\Delta x^{2}+\Delta y^{2}+\Delta z^{2}}{6\Delta t} \right \rangle" />.\
     **Default value:** 1 (YES)
-    displacement[ij]  = 0.5 * delta(i)*delta(j)/Tscale
-    grid = 1000 * sum_all_frames( disp(xx)+disp(yy)+disp(zz) ) / (6*Tscale*(nframes-5) )
-    saved in diff.pdb
 
 
 -   HYDRO\
@@ -117,24 +116,56 @@ The following parameters are required for every tensor field calculation:
     **Default Values:** None
 
 -   res\
-    **Description:** Tensor field density, &#8491;<sup>-1</sup>\
-    **Default value:** 1.0
+    **Description:** Tensor field density.\
+    **Default value:** 1.0 &#8491;<sup>-1</sup>
+
+-   dt\
+    **Description:** Integration step size\
+    **Default value:** 0.05
 
 -   minlen, maxlen\
-        **Description:** Minimal and maximal allowed length of a streamline. Streamlines shorter than minlen will be discarded. A streamline is terminated when its length reaches maxlen.
-        **Default values:** minlen = 6.0, maxlen = 80.0 &#8491;
+        **Description:** Minimal and maximal allowed length of a streamline. Streamlines shorter than minlen will be discarded. A streamline is terminated when its length reaches maxlen.\
+        **Default values:** minlen = 6.0 &#8491;, maxlen = 80.0 &#8491;
 
--   max_turn\
-        **Description:** Maximal allowed angular turn from the previous location of a point in a streamline.
+-   maxturn\
+        **Description:** Maximal allowed angular turn from the previous location of a point in a streamline.\
         **Default value:** 70.0 degrees
 
--   seed_dens\
-        **Description:** Density of seed points. Seed points are points with high diffusion coefficient and anisotropy. These points are used as a starting points for propagation of streamlines. Higher value of seed_dens will result in more streamlines.\
+-   minaniseed\
+        **Description:** Minimal liner anisotropy *c* of seed points.<br><img src="https://latex.codecogs.com/gif.latex?c&space;=&space;\frac{\lambda_1-\lambda_2}{\lambda_1&space;&plus;\lambda_2&space;&plus;\lambda_3}" title="c = \frac{\lambda_1-\lambda_2}{\lambda_1 +\lambda_2 +\lambda_3}" /><br>  Seed points are points with *c* > minaniseed. These points are used as a starting points for propagation of streamlines. Lower value of minaniseed will result in less streamlines.\
+        **Default value:** 0.5
+
+-   seeddens\
+        **Description:** Density of seed points. Higher value of seed_dens will result in more streamlines.\
         **Default value:** 2.0 &#8491;<sup>-1</sup>
+
+-   mlsf\
+        **Description:** Turn moving least-squares filtering on/off. Moving least-squares filter approximates tensor locally with a low-degree polynomial to the location, orientation, and history of a streamline. Set mlsf to 1 to enable filtering.\
+        **Default value:** 0 (no filter)</sup>
+
+-   fpoly\
+        **Description:** Order of polynomial.\
+        **Default value:** 1
+
+-   fwidth\
+        **Description:** Half width of the Gaussian filter kernel at e<sup>-1</sup> level.\
+        **Default value:** 0.4
+
+-   fdata\
+        **Description:** The number of integration points on a semi axis.\
+        **Default value:** 10
+
+-   fcutoff\
+        **Description:** Integration cutoff in units of Gaussian filter kernel width.\
+        **Default value:** 2.0
+
+-   savebox\
+        **Description:**  Save ROI in the roi.pdb file. This option has no values. \
+        **Default:** do not save ROI
 
 
 ### Running the programs:
-`./tensors < tfield.conf`
+`./tensors < tfield.conf`\
 `./streamline < streamline.conf`
 
 Or:\
@@ -150,9 +181,10 @@ Streamlines are saved in mol2 file format as atoms with atom name CA and residue
 
 1.  Fractional anisotropy is saved in the streamline_A.mol2
 2.  The largest eigenvalue of the diffusion tensor ( &#955;<sub>1</sub> ) is saved in the streamline_D.mol2.  It shows diffusivity (the rate of diffusion) in the direction tangent to streamlines.
-3.  Direction of the streamlines is saved in streamline_XYZ.mol2. Unit vector tangent to a streamline at each point is encoded into a floating point number (color code). Streamlines colored by direction can be visualized in VMD using shell script “load\_streamlines\_mol2.sh”.
+3.  The direction of streamlines is saved in streamline_XYZ.mol2. Unit vector tangent to a streamline at each point is encoded into a floating point number (colour code). Streamlines coloured by direction can be visualized in VMD using shell script “load\_streamlines\_mol2.sh”.
 
 ## References:
 
-1.  C. Gustafsson, S. Vassiliev, C. Kurten, P.-O. Syren, T. Brinck, MD simulations reveal complex water paths in squalene hopene cyclase - tunnel obstructing mutations alter the movements of water in the active site, ACS Omega. submitted (2017).
+1.  C. Gustafsson, S. Vassiliev, C. Kurten, P.-O. Syren, T. Brinck, MD simulations reveal complex water paths in squalene-hopene cyclase - tunnel obstructing mutations alter the movements of water in the active site, ACS Omega. submitted (2017).
 2.  S. Vassiliev, P. Comte, A. Mahboob, D. Bruce, Tracking the Flow of Water through Photosystem II Using Molecular Dynamics and Streamline Tracing, Biochemistry. 49 (2010) 1873–1881. doi:10.1021/bi901900s.
+
