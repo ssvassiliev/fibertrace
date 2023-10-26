@@ -134,6 +134,10 @@ The following parameters are required for every tensor field calculation:
     **Description:** Minimal and maximal allowed length of a streamline. Streamlines shorter than minlen will be discarded. A streamline is terminated when its length reaches maxlen.\
     **Default values:** minlen = 6.0 &#8491;, maxlen = 80.0 &#8491;
 
+-   minani\
+    **Description:** The cutoff value for anisotropy
+    **Default value:** 0.08
+
 -   maxturn\
     **Description:** Maximal allowed angular turn from the previous location of a point in a streamline.\
     **Default value:** 70.0 degrees
