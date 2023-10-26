@@ -131,22 +131,22 @@ The following parameters are required for every tensor field calculation:
     **Default value:** 0.05
 
 -   minlen, maxlen\
-        **Description:** Minimal and maximal allowed length of a streamline. Streamlines shorter than minlen will be discarded. A streamline is terminated when its length reaches maxlen.\
-        **Default values:** minlen = 6.0 &#8491;, maxlen = 80.0 &#8491;
+    **Description:** Minimal and maximal allowed length of a streamline. Streamlines shorter than minlen will be discarded. A streamline is terminated when its length reaches maxlen.\
+    **Default values:** minlen = 6.0 &#8491;, maxlen = 80.0 &#8491;
 
 -   maxturn\
-        **Description:** Maximal allowed angular turn from the previous location of a point in a streamline.\
-        **Default value:** 70.0 degrees
+    **Description:** Maximal allowed angular turn from the previous location of a point in a streamline.\
+    **Default value:** 70.0 degrees
 
 -   minaniseed\
-        **Description:** Minimal linear anisotropy *c* of seed points.
+    **Description:** Minimal linear anisotropy *c* of seed points.
 
     ```math
         c=\frac{\lambda_1-\lambda_2}{\lambda_1+\lambda_2+\lambda_3}
     ```
 
-        Seed points are points with c > minaniseed. These points are used as a starting points for propagation of streamlines. Lower value of minaniseed will result in more streamlines.\
-        **Default value:** 0.5
+    Seed points are points with c > minaniseed. These points are used as a starting points for propagation of streamlines. Lower value of minaniseed will result in more streamlines.\
+    **Default value:** 0.5
 
 -   seeddens\
         **Description:** Density of seed points. Higher value of seed_dens will result in more streamlines.\
