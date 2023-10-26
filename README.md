@@ -135,7 +135,7 @@ The following parameters are required for every tensor field calculation:
     **Default values:** minlen = 6.0 &#8491;, maxlen = 80.0 &#8491;
 
 -   minani\
-    **Description:** The cutoff value for anisotropy
+    **Description:** The cutoff value for anisotropy.  
     **Default value:** 0.08
 
 -   maxturn\
