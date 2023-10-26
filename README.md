@@ -144,8 +144,7 @@ The following parameters are required for every tensor field calculation:
     ```math
         c=\frac{\lambda_1-\lambda_2}{\lambda_1+\lambda_2+\lambda_3}
     ```
-
-         Seed points are points with *c* > minaniseed. These points are used as a starting points for propagation of streamlines. Lower value of minaniseed will result in more streamlines.\
+        Seed points are points with *c* > minaniseed. These points are used as a starting points for propagation of streamlines. Lower value of minaniseed will result in more streamlines.\
         **Default value:** 0.5
 
 -   seeddens\
