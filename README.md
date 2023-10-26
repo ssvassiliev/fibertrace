@@ -28,8 +28,6 @@ Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
 
 Streamline analysis is based on the determination of the 3D velocity field and the subsequent calculation of the motion of the massless fluid element in it. To determine velocity field the simulation system volume is divided into *n* small cubic elements (voxels) with a volume of ~1&#8491;<sup>3</sup> each. For all voxels containing a water molecule, the diffusion tensor elements are calculated according to the Einstein relation:<br><br>
 
-<img src="https://www.codecogs.com/gif.latex?T^\alpha^\beta&space;=&space;{}\frac{\left&space;\langle&space;\alpha(t&plus;\Delta&space;t)-\alpha&space;(t)\right&space;\rangle\left\langle&space;\beta(t&plus;\Delta&space;t)-\beta&space;(t)&space;\right&space;\rangle}{2\Delta&space;t}\qquad&space;\alpha&space;,\beta&space;=&space;\left&space;\{&space;x,y,z&space;\right&space;\}" /><br>
-
 ```math
 T^{\alpha\beta}=\frac{\langle \alpha (t + \Delta t)- \alpha(t) \rangle \langle \beta(t + \Delta t) - \beta(t) \rangle}{2\Delta t}\qquad \alpha ,\beta = \{x,y,z\}
 ```
@@ -136,7 +134,7 @@ The following parameters are required for every tensor field calculation:
         **Default value:** 70.0 degrees
 
 -   minaniseed\
-        **Description:** Minimal linear anisotropy *c* of seed points.<br><img src="https://latex.codecogs.com/gif.latex?c&space;=&space;\frac{\lambda_1-\lambda_2}{\lambda_1&space;&plus;\lambda_2&space;&plus;\lambda_3}" title="c = \frac{\lambda_1-\lambda_2}{\lambda_1 +\lambda_2 +\lambda_3}" /><br>  Seed points are points with *c* > minaniseed. These points are used as a starting points for propagation of streamlines. Lower value of minaniseed will result in less streamlines.\
+        **Description:** Minimal linear anisotropy *c* of seed points.<br><img src="https://latex.codecogs.com/gif.latex?c&space;=&space;\frac{\lambda_1-\lambda_2}{\lambda_1&space;&plus;\lambda_2&space;&plus;\lambda_3}" title="c = \frac{\lambda_1-\lambda_2}{\lambda_1 +\lambda_2 +\lambda_3}" /><br>  Seed points are points with *c* > minaniseed. These points are used as a starting points for propagation of streamlines. Lower value of minaniseed will result in more streamlines.\
         **Default value:** 0.5
 
 -   seeddens\
