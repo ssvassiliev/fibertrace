@@ -99,7 +99,7 @@ The following parameters are required for every tensor field calculation:
 
 -   DIFF\
     **Description:** Save diffusion coefficient map. Values are saved in the occupancy field of the file diff.pdb. This is the same coefficient as saved in ADC.pdb, but obtained directly from the mean square displacement:
-    
+
     ```math
     D=\left\langle\frac{\Delta x^{2}+\Delta y^{2}+\Delta z^{2}}{6\Delta t}\right\rangle
     ```
@@ -139,7 +139,12 @@ The following parameters are required for every tensor field calculation:
         **Default value:** 70.0 degrees
 
 -   minaniseed\
-        **Description:** Minimal linear anisotropy *c* of seed points.<br><img src="https://latex.codecogs.com/gif.latex?c&space;=&space;\frac{\lambda_1-\lambda_2}{\lambda_1&space;&plus;\lambda_2&space;&plus;\lambda_3}" title="c = \frac{\lambda_1-\lambda_2}{\lambda_1 +\lambda_2 +\lambda_3}" /><br>  Seed points are points with *c* > minaniseed. These points are used as a starting points for propagation of streamlines. Lower value of minaniseed will result in more streamlines.\
+        **Description:** Minimal linear anisotropy *c* of seed points.
+        ```math
+        c=\frac{\lambda_1-\lambda_2}{\lambda_1+\lambda_2+\lambda_3}
+        ```
+
+         Seed points are points with *c* > minaniseed. These points are used as a starting points for propagation of streamlines. Lower value of minaniseed will result in more streamlines.\
         **Default value:** 0.5
 
 -   seeddens\
