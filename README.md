@@ -35,9 +35,12 @@ T^{\alpha\beta}=\frac{\langle \alpha (t + \Delta t)- \alpha(t) \rangle \langle \
 To obtain all nine tensor elements, &#945; and &#946; are sequentially substituted with *x*, *y*, and *z* coordinates of a water molecule. Tensor elements are averaged over the time window of the molecular dynamics run, then eigenvalues  &#955; and eigenvectors &#957; are obtained by diagonalization of the diffusion tensors.
 From the eigenvalues apparent diffusion coefficient (*ADC*) and fractional anisotropy (*FA*) are calculated:<br>
 
-<img src="https://latex.codecogs.com/gif.latex?ADC=\frac{\lambda_1&plus;\lambda_2&plus;\lambda_3}{3}" title="ADC=\frac{\lambda_1+\lambda_2+\lambda_3}{3}" /><br>
-
- <img src="https://www.codecogs.com/gif.latex?FA=\sqrt{\frac{3}{2}}\sqrt{\frac{\left(\lambda_1-\frac{\lambda_1&plus;\lambda_2&plus;\lambda_3}{3}\right)^2&plus;\left&space;(\lambda_2-\frac{\lambda_1&plus;\lambda_2&plus;\lambda_3}{3}\right&space;)^2&plus;\left&space;(\lambda_3-\frac{\lambda_1&plus;\lambda_2&plus;\lambda_3}{3}\right&space;)^2}{\lambda_1^2&plus;\lambda_2^2&plus;\lambda_3^2}}" /><br>
+```math
+ADC=\frac{\lambda_1 +\lambda_2 + \lambda_3}{3}
+```
+```math
+FA=\sqrt{\frac{3}{2}}\sqrt{\frac{\left(\lambda_1-\frac{\lambda_1 + \lambda_2 + \lambda_3}{3}\right)^2 + \left(\lambda_2-\frac{\lambda_1 + \lambda_2 + \lambda_3}{3}\right)^2 + \left (\lambda_3-\frac{\lambda_1 + \lambda_2 + \lambda_3}{3}\right)^2}{\lambda_1^2 + \lambda_2^2 + \lambda_3^2}}
+```
 
 *FA* has values between 0 and 1. A value of 0 corresponds to completely isotropic diffusion in all directions, a value of 1 corresponds to diffusion only along one axis.
 
