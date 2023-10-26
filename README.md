@@ -31,7 +31,7 @@ Streamline analysis is based on the determination of the 3D velocity field and t
 <img src="https://www.codecogs.com/gif.latex?T^\alpha^\beta&space;=&space;{}\frac{\left&space;\langle&space;\alpha(t&plus;\Delta&space;t)-\alpha&space;(t)\right&space;\rangle\left\langle&space;\beta(t&plus;\Delta&space;t)-\beta&space;(t)&space;\right&space;\rangle}{2\Delta&space;t}\qquad&space;\alpha&space;,\beta&space;=&space;\left&space;\{&space;x,y,z&space;\right&space;\}" /><br>
 
 ```math
-\alpha^\beta&space;=&space;{}\frac{\left&space;\langle&space;\alpha(t&plus;\Delta&space;t)-\alpha&space;(t)\right&space;\rangle\left\langle&space;\beta(t&plus;\Delta&space;t)-\beta&space;(t)&space;\right&space;\rangle}{2\Delta&space;t}\qquad&space;\alpha&space;,\beta&space;=&space;\left&space;\{&space;x,y,z&space;\right&space;\}
+T^\alpha^\beta&space;=&space;{}\frac{\left&space;\langle&space;\alpha(t&plus;\Delta&space;t)-\alpha&space;(t)\right&space;\rangle\left\langle&space;\beta(t&plus;\Delta&space;t)-\beta&space;(t)&space;\right&space;\rangle}{2\Delta&space;t}\qquad&space;\alpha&space;,\beta&space;=&space;\left&space;\{&space;x,y,z&space;\right&space;\}
 ```
 
 To obtain all nine tensor elements, &#945; and &#946; are sequentially substituted with *x*, *y*, and *z* coordinates of a water molecule. Tensor elements are averaged over the time window of the molecular dynamics run, then eigenvalues  &#955; and eigenvectors &#957; are obtained by diagonalization of the diffusion tensors.
