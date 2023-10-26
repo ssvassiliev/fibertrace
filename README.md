@@ -99,8 +99,10 @@ The following parameters are required for every tensor field calculation:
 
 -   DIFF\
     **Description:** Save diffusion coefficient map. Values are saved in the occupancy field of the file diff.pdb. This is the same coefficient as saved in ADC.pdb, but obtained directly from the mean square displacement:
-
-    <img src="https://latex.codecogs.com/gif.latex?D=\left&space;\langle&space;\frac{\Delta&space;x^{2}&plus;\Delta&space;y^{2}&plus;\Delta&space;z^{2}}{6\Delta&space;t}&space;\right&space;\rangle" title="D=\left \langle \frac{\Delta x^{2}+\Delta y^{2}+\Delta z^{2}}{6\Delta t} \right \rangle" />.\
+    
+    ```math
+    D=\left\langle\frac{\Delta x^{2}+\Delta y^{2}+\Delta z^{2}}{6\Delta t}\right\rangle
+    ```
     **Default value:** 1 (YES)
 
 
